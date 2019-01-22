@@ -47,9 +47,9 @@ background-position:bottom;height:55px;">
               <%})%>
               </ul>
               </li>
-            <%}else{%>
+            <%}else{if(link==="launch"){}else{%>
               <a class="nav-link" style="text-transform: uppercase;color:#fff;" href="/<%= link %>"><span class="sr-only">(current)</span><%- link.replace('_',' ') %></a>
-              <%}%>
+              <%}}%>
             <%}else{%>
               <% var link1=link+"client" %>
               <%if(link==='Teams'){%>
@@ -67,9 +67,9 @@ background-position:bottom;height:55px;">
                   <%})%>
                   </ul>
                   </li>
-                <%}else{%>
+                <%}else{if(link==="launch"){}else{%>
               <a class="nav-link" style="text-transform: uppercase;color:#fff;"  href="/<%= link1 %>"><span class="sr-only">(current)</span><%- link.replace('_',' ')  %></a>
-              <%}%>
+              <%}}%>
               <%}%>
         </li>
         <% x++; %>

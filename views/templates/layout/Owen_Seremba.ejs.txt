@@ -1,0 +1,16 @@
+{
+"pagename":"/views/templates/layout/Owen_Seremba.ejs",
+"title":"Mr.",
+"layout":"layout",
+"layoutParts":3,
+"1.1":1,
+"1.2":1,
+"1.3":1,
+"1.1.1":1,
+"1.2.1":1,
+"1.3.1":1,
+"1.0.1.1":"components/Owen_Seremba.ejs/1.0.1.1.ejs",
+"1.1.1.1":"components/Owen_Seremba.ejs/1.1.1.1.ejs",
+"1.2.1.1":"components/Owen_Seremba.ejs/1.2.1.1.ejs",
+"otherinfo":""
+}

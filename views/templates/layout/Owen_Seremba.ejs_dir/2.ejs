@@ -1,0 +1,137 @@
+
+
+<script src="/assets/popper.min.js"></script>
+<script src="/assets/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<script src="/assets/text-editor/summernote-lite.js"></script>
+<script>
+
+"<% setTimeout(function(){%>"
+    $('#summernote').summernote({
+      placeholder: 'logo data edit',
+      tabsize: 2,
+      height:300,
+      focus: true  
+    });
+    $('#summernote1').summernote({
+      placeholder: 'Hero data Edit',
+      tabsize: 2,
+      height:300,
+      focus: true  
+    });
+ 
+    "<%for(var s=0;s<30;s++){%>"
+    "<%for(var t=0;t<30;t++){%>"
+      $('#tabwidget<%-t%>tab<%-s%>').summernote({
+      placeholder: 'Hero data Edit',
+      tabsize: 2,
+      height:300,
+      focus: true  
+    });
+    $('#tabwidget<%-t%>tab<%-s%>right').summernote({
+      placeholder: 'Hero data Edit',
+      tabsize: 2,
+      height:300,
+      focus: true  
+    });
+    $('#tabwidget<%-t%>tab<%-s%>middle').summernote({
+      placeholder: 'Hero data Edit',
+      tabsize: 2,
+      height:300,
+      focus: true  
+    });
+    "<%}%>"
+    "<%}%>"
+
+
+   "<% if((pageComponents.layoutcomponents[1].pageComponents.sections.components)!=undefined){%>"
+   "<% for(var i=0;i<(pageComponents.layoutcomponents[1].pageComponents.sections.components.length);i++){ %>" 
+  "<% var sectionPath=pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[i].type %>"
+
+"<% if((pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsleft)!=undefined){%>"
+
+   "<%if(pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsleft.length>0){%>"
+   "<% for(var p=0;p<(pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsleft.length);p++){ %>" 
+
+   $("#widgetleft<%-i%><%-p%>").summernote({
+      placeholder: 'Hello stand alone ui',
+      tabsize: 2,
+      height:300
+    });
+
+          var edit = function() {
+  $("#widgetleft<%-i%><%-p%>").summernote({focus: true});
+};
+
+var save = function() {
+  var markup = $("#widgetleft<%-i%><%-p%>").summernote('code');
+  $("#widgetleft<%-i%><%-p%>").summernote('destroy');
+};
+   "<%}%>"
+   "<%}%>"
+   "<%}%>"
+
+"<% if((pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsright)!=undefined){%>"
+
+"<%if(pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsright.length>0){%>"
+"<% for(var p=0;p<(pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsright.length);p++){ %>" 
+
+$("#widgetright<%-i%><%-p%>").summernote({
+   placeholder: 'Hello stand alone ui',
+   tabsize: 2,
+   height:300
+
+ });
+
+       var edit = function() {
+$("#widgetright<%-i%><%-p%>").summernote({focus: true});
+};
+
+var save = function() {
+var markup = $("#widgetright<%-i%><%-p%>").summernote('code');
+$("#widgetleft<%-i%><%-p%>").summernote('destroy');
+};
+"<%}%>"
+"<%}%>"
+"<%}%>"
+
+"<% if((pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsmiddle)!=undefined){%>"
+
+"<%if(pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsmiddle.length>0){%>"
+"<% for(var p=0;p<(pageComponents.layoutcomponents[1].pageComponents.sections.components[i].widgetsmiddle.length);p++){ %>" 
+
+$("#widgetmiddle<%-i%><%-p%>").summernote({
+   placeholder: 'Hello stand alone ui',
+   tabsize: 2,
+   height:300
+
+ });
+
+       var edit = function() {
+$("#widgetmiddle<%-i%><%-p%>").summernote({focus: true});
+};
+
+var save = function() {
+var markup = $("#widgetmiddle<%-i%><%-p%>").summernote('code');
+$("#widgetmiddle<%-i%><%-p%>").summernote('destroy');
+};
+"<%}%>"
+"<%}%>"
+"<%}%>"
+
+  
+      "<%}}%>"
+  
+   
+  " <% },2000);%>"
+
+
+
+
+
+
+  
+
+  </script> 
+ 
+</body>
+</html>

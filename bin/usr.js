@@ -281,7 +281,7 @@ function createRoutes(){
             var players=fdb1.getData('/players');
             console.log(pgs);
             res.render(`templates/${tmp}${name}`,{pageComponents:pageComponents,pageData:db.getData("/"),pageList:pgs,teams:teams,players:players,wdate:wdate,pname:name});
-        },500);//changed from 3000
+        },100);//changed from 3000
                  
             
         });
@@ -1435,7 +1435,8 @@ function pageManifest(root_path,name,cdt){
            
         });
          
-        Promise.all([prm]).then(console.log('Data file now ok..')).catch((err)=>{console.log(err)});
+        Promise.all([prm]).then(
+        console.log('Data file now ok..')).catch((err)=>{console.log(err)});
       //end of prm
        
     });

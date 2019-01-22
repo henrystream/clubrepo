@@ -50,6 +50,7 @@ background-attachment: fixed;
 	 }
 		
 	</style>
+	
 </head>
 <body style="background-color:lavender">
     <div class="container">
@@ -69,12 +70,11 @@ background-attachment: fixed;
 </div><!--closing column -->
 
 </div><!--closing row -->
-
-
-<script src="/assets/popper.min.js"></script>
-<script src="/assets/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<script src="/assets/popper1.min.js"></script>
+<script src="/assets/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 <script src="/assets/text-editor/summernote-lite.js"></script>
 <script>
+
 
     $('#summernote').summernote({
       placeholder: 'logo data edit',
@@ -89,8 +89,8 @@ background-attachment: fixed;
       focus: true  
     });
  
-    "<%for(var s=0;s<30;s++){%>"
-    "<%for(var t=0;t<30;t++){%>"
+    "<%for(var s=0;s<20;s++){%>"
+    "<%for(var t=0;t<20;t++){%>"
       $('#tabwidget<%-t%>tab<%-s%>').summernote({
       placeholder: 'Hero data Edit',
       tabsize: 2,
@@ -191,17 +191,11 @@ $("#widgetmiddle<%-i%><%-p%>").summernote('destroy');
   
       "<%}}%>"
   
-   
- 
-
-
-
-
-
-
-  
 
   </script> 
+
+
+
  
 </body>
 </html>
