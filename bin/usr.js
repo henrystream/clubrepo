@@ -1435,9 +1435,7 @@ function pageManifest(root_path,name,cdt){
            
         });
          
-        Promise.all([prm]).then(
-        console.log('Data file now ok..'),
-    ).catch((err)=>{console.log(err)});
+        Promise.all([prm]).then(console.log('Data file now ok..')).catch((err)=>{console.log(err)});
       //end of prm
        
     });
