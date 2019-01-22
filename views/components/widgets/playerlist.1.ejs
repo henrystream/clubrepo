@@ -1,0 +1,43 @@
+
+<div >
+    <div>
+      <div class="bg-dark p-4">
+          <nav id="nav-menu-container">
+              <ol class="nav-menu" style="color:#fff;">
+                  <% var x=0; %>
+                  <% players.forEach((link)=>{%>
+                  
+                <li class="nav-item active">
+                    <% if(wdate!=undefined) { %>
+                      <a class="nav-link" style="text-transform: uppercase;color:#fff;" href="/<%= link %>"><span class="sr-only">(current)</span>
+                      <% var l=link %>
+                      <% var c=l.split('_').length %>
+                      <% for(var p=0;p<c;p++){%> 
+                        <% l= l.replace('_',' ') %>
+                      <%}%>
+                      <%- l %>
+                    </a>
+                      <%}else{%>
+                        <% var link1=link+"client" %>
+                        <a class="nav-link " style="text-transform: uppercase;color:#fff;"  href="/<%= link1 %>"><span class="sr-only">(current)</span>
+                            <% var l=link %>
+                            <% var c=l.split('_').length %>
+                            <% for(var p=0;p<c;p++){%> 
+                              <% l= l.replace('_',' ') %>
+                            <%}%>
+                            <%- l %>
+                            <span class="badge pull-right" style="margin-right:20px;"></span>
+                        </a>
+                        
+                        <%}%>
+                </li>
+                <% x++; %>
+                <%});%>
+              </ol>
+          
+            </nav>
+      
+      </div>
+    </div>
+
+  </div>

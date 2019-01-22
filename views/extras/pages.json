@@ -1,0 +1,206 @@
+{
+    "pages": [
+        {
+            "name": "Home",
+            "pagename": "Home.ejs",
+            "pagetitle": "Home page",
+            "pagelayout": "layout"
+        },
+        {
+            "name": "About_us",
+            "pagename": "About_us.ejs",
+            "pagetitle": "About us page",
+            "pagelayout": "layout",
+            "pagetype": "page"
+        },
+        {
+            "name": "Profiles",
+            "pagename": "Profiles.ejs",
+            "pagetitle": "Profiles page",
+            "pagelayout": "layout",
+            "pagetype": "page"
+        },
+        {
+            "name": "Events",
+            "pagename": "Events.ejs",
+            "pagetitle": "Events page",
+            "pagelayout": "layout",
+            "pagetype": "page"
+        },
+        {
+            "name": "Contacts",
+            "pagename": "Contacts.ejs",
+            "pagetitle": "Contacts Page",
+            "pagelayout": "layout",
+            "pagetype": "page"
+        },
+        {
+            "name": "Edward_Ssekandi",
+            "pagename": "Edward_Ssekandi.ejs",
+            "pagetitle": "H.E",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Joseph_Mukiibi",
+            "pagename": "Joseph_Mukiibi.ejs",
+            "pagetitle": "Prof. ",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Lawrence_Lugwana_Kaggwa",
+            "pagename": "Lawrence_Lugwana_Kaggwa.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Maria_Goretti_Sanyu_Nassali_Musoke",
+            "pagename": "Maria_Goretti_Sanyu_Nassali_Musoke.ejs",
+            "pagetitle": "Prof.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kalanzi_Aloysius_Ivan",
+            "pagename": "Kalanzi_Aloysius_Ivan.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Arthur_Kiweewa",
+            "pagename": "Arthur_Kiweewa.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Namakula_Anna_Maria_",
+            "pagename": "Namakula_Anna_Maria_.ejs",
+            "pagetitle": "Ms.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "_Emmanuel_B_K_Mumira_",
+            "pagename": "_Emmanuel_B_K_Mumira_.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "George_William_L_Kasibante",
+            "pagename": "George_William_L_Kasibante.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Jjumba_Mukasa_Oswald_",
+            "pagename": "Jjumba_Mukasa_Oswald_.ejs",
+            "pagetitle": "Dr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Budde_Dominic_Harry_Kigoonya",
+            "pagename": "Budde_Dominic_Harry_Kigoonya.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Byansi_K_James",
+            "pagename": "Byansi_K_James.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kaliika_Winnifred_Kawooya",
+            "pagename": "Kaliika_Winnifred_Kawooya.ejs",
+            "pagetitle": "Mrs.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kaliika_Vicent_Kyeyune",
+            "pagename": "Kaliika_Vicent_Kyeyune.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kimbowa_Getrude_Lutaaya",
+            "pagename": "Kimbowa_Getrude_Lutaaya.ejs",
+            "pagetitle": "Mrs.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kimbowa_Joseph_Lutaaya",
+            "pagename": "Kimbowa_Joseph_Lutaaya.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kizito_Joseph_Musisi",
+            "pagename": "Kizito_Joseph_Musisi.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kukumba_Vicent",
+            "pagename": "Kukumba_Vicent.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Kwebiha_Betty",
+            "pagename": "Kwebiha_Betty.ejs",
+            "pagetitle": "Ms.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Magezi_James",
+            "pagename": "Magezi_James.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Mulo_Christine_Nalugwa",
+            "pagename": "Mulo_Christine_Nalugwa.ejs",
+            "pagetitle": "Mrs.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Muntu_Emmanuel_M",
+            "pagename": "Muntu_Emmanuel_M.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "Nsereko_Joseph",
+            "pagename": "Nsereko_Joseph.ejs",
+            "pagetitle": "Mr.",
+            "pagelayout": "layout",
+            "pagetype": "player"
+        },
+        {
+            "name": "launch",
+            "pagename": "launch.ejs",
+            "pagetitle": "website launch page",
+            "pagelayout": "layout",
+            "pagetype": "launch"
+        }
+    ]
+}

@@ -1,0 +1,470 @@
+<div class="row" style="margin-top:10px;">
+    <div class="col-lg-12" >
+        <div id="<%- widget %>pp">
+                <div style= <% if(side==='widgetsleft'){%>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style!=undefined){%>
+                   <% var st="",st1="",st2=""%>
+                   <% var bgcolor=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style[0].split(":")[1].split(";")[0]; %>
+                   <% var textcolor=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style[1].split(":")[1].split(";")[0]; %>
+
+                   <% var width=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style[4].split(":")[1].split(";")[0]; %>
+                   <% var height=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style[5].split(":")[1].split(";")[0]; %>
+                   <%if((pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style[6])!=undefined){%>
+                   <% var visibility=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style[6].split(":")[1].split(";")[0]; %>
+                  <%}%>
+                  <%for(var c=0;c<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style.length);c++){%>
+                  <% st+=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].style[c] %> 
+                  <%}%>
+                  <%- st %>
+                  <%}%>
+                <%}%>
+                <% if(side==='widgetsright'){%>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style!=undefined){%>
+                    <% var st1=""%>
+                    <% var bgcolor=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style[0].split(":")[1].split(";")[0]; %>
+                    <% var textcolor=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style[1].split(":")[1].split(";")[0]; %>
+                    
+                    <% var width=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style[4].split(":")[1].split(";")[0]; %>
+                    <% var height=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style[5].split(":")[1].split(";")[0]; %>
+                    <%if((pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style[6])!=undefined){%>
+                    <% var visibility=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style[6].split(":")[1].split(";")[0]; %>
+                   <%}%>
+                    <%for(var c=0;c<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style.length);c++){%>
+                    <% st1+=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].style[c] %> 
+                    <%}%>
+                    <%- st1 %>
+                    <%}%>
+                  <%}%>
+                  <% if(side==='widgetsmiddle'){%>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style!=undefined){%>
+                      <% var st=""%>
+                      <% var bgcolor=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style[0].split(":")[1].split(";")[0]; %>
+                      <% var textcolor=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style[1].split(":")[1].split(";")[0]; %>
+                      
+                      <% var width=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style[4].split(":")[1].split(";")[0]; %>
+                      <% var height=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style[5].split(":")[1].split(";")[0]; %>
+                      <%if((pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style[6])!=undefined){%>
+                      <% var visibility=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style[6].split(":")[1].split(";")[0]; %>
+                     <%}%>
+                      <%for(var c=0;c<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style.length);c++){%>
+                      <% st2+=pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].style[0] %> 
+                    <%}%> 
+                    <%- st2 %>
+                    <%}%> 
+                    <%}%>    
+                    >
+
+
+                  <% if(side==="widgetsleft"){%>
+                  <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].data %> 
+                <%}%>
+                <% if(side==="widgetsright"){%>
+                  <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                  <%}%>
+                  <% if(side==="widgetsmiddle"){%>
+                    <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                    <%}%>
+                  </div>
+                <% if(wdate!=undefined) { %>
+           
+                    <div class="btn-group">
+
+                       <button class="btn btn-danger btn-sm" type="button">
+                        Manage Widget
+                       </button>
+                       <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <span class="sr-only">Toggle Dropdown</span>
+                       </button>
+                   <div class="dropdown-menu">
+                        <button type="button" class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>Modal" data-whatever="@mdo">Edit widget data</button>
+                        <div class="dropdown-divider"></div>
+                        <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                        <div class="dropdown-divider"></div>
+                        <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>DeleteWidgetModal" data-whatever="@mdo">Delete widget</button>
+                        <div class="dropdown-divider"></div>
+                        <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>PromoteWidgetModal" data-whatever="@mdo">Promote widget</button>
+                        <div class="dropdown-divider"></div>
+                        <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>DemoteWidgetModal" data-whatever="@mdo">Demote widget</button>
+                       
+                      </div></div>
+                    <% } %> 
+        </div>
+        <% if(wdate!=undefined) { %>
+        <div class="modal fade" id="<%- widget %>StyleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Widget Style</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container">
+                        <div class="row" style="height:100px;">
+                   
+                          <div class="col-lg-12">
+                         <div class="custom_model">
+                            <form id="target"  method="POST">
+                              <label class="label" style="width:150px" for="backgroundcolor">Background-color:</label>
+                              <input type="color" name="backgroundcolor" value="<%= bgcolor%>"/><br/>
+                              <label class="label" style="width:150px" for="textcolor">Color:</label>
+                              <input type="color" name="textcolor" value="<%= textcolor%>"/><br/>
+                              <label class="label" style="min-width:150px" for="minwidth">Min-width:</label>
+                              <input type="text" name="minwidth"/><br/>
+                              <label class="label" style="min-width:150px" for="minheight">Min-height:</label>
+                              <input type="text" name="minheight"/><br/>
+                              <label class="label" style="min-width:150px" for="width">Width:</label>
+                              <input type="text" name="width" value="<%=width%>"/><br/>
+                              <label class="label" style="min-width:150px" for="height">Height:</label>
+                              <input type="text" name="height" value="<%=height%>"/><br/>
+
+                              <label class="label" style="min-width:150px" for="margin-top">Margin-top:</label>
+                              <input type="text" name="margin-top"/><br/>
+                              <label class="label" style="min-width:150px" for="margin-right">Margin-right:</label>
+                              <input type="text" name="margin-right"/><br/>
+                              <label class="label" style="min-width:150px" for="margin-bottom">Margin-bottom:</label>
+                              <input type="text" name="margin-bottom"/><br/>
+                              <label class="label" style="min-width:150px" for="margin-left">Margin-left:</label>
+                              <input type="text" name="margin-left"/><br/>
+
+                              <label class="label" style="min-width:150px" for="margin-left">Visibility:</label>
+                              <input type="text" name="visibility" value="<%=visibility%>"/><br/>
+
+                              <input type="hidden" name="style"   value="true"/>
+                              <input type="hidden" name="area"   value="sections"/>
+                              <input type="hidden" name="category" value="widgets"/> 
+                              <input type="hidden" name="section" value="<%-section%>"/>  
+                              <input type="hidden" name="side" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>   
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn">Save Data</button>
+                                </div>
+                            </form>		
+                        </div>
+                         </div>
+                       
+                      
+                      
+                      
+                        </div>
+                     
+                      </div>
+                    </div>
+                
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="<%- widget %>Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Widget Data</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container">
+                        <div class="row" style="height:100px;">
+                          <div class="col-lg-12">
+                         <div class="custom_model" >
+                            <form id="target"  method="POST">
+                              <textarea id="<%- widget %>" name="editordata">
+                                <% if(side==="widgetsleft"){%>
+                                  <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].data %> 
+                                <%}%>
+                                <% if(side==="widgetsright"){%>
+                                  <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                                  <%}%>
+                                  <% if(side==="widgetsmiddle"){%>
+                                    <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                                    <%}%>
+                              </textarea>
+                              <input type="hidden" name="area"   value="sections"/>
+                              <input type="hidden" name="category" value="widgets"/> 
+                              <input type="hidden" name="section" value="<%-section%>"/>  
+                              <input type="hidden" name="side" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>   
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn">Save Data</button>
+                                </div>
+                            </form>		
+                        </div>
+                         </div>
+
+                      
+                      
+                      
+                        </div>
+                     
+                      </div>
+                    </div>
+                
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="<%- widget %>SectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Section</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container">
+                        <div class="row" style="height:100px;">
+                          <div class="col-lg-4">
+                         <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                            <form method="POST"  >
+                                <input type="hidden" name="category"   value="sections"/>
+                                <input type="hidden" name="area"   value="body"/>
+                                <input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>
+                                <input type="hidden" name="section"   value="<%- section %>"/>
+                                <input type="hidden" name="action"   value="change section"/>
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 1</button>
+                               
+                              </form>
+                        </div>
+                         </div>
+                          <div class="col-lg-4">
+                             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                             <form method="POST"  >
+                               <input type="hidden" name="category"   value="sections"/>
+                               <input type="hidden" name="area"   value="body"/>
+                                <input type="hidden" name="component"  value="/views/components/sections/section2.ejs"/>
+                                <input type="hidden" name="section"   value="<%- section %>"/>
+                                <input type="hidden" name="action"   value="change section"/>
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 2</button>
+                              
+                             </form>
+                          </div>
+                         </div>
+                          <div class="col-lg-4">
+                           <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                               <form method="POST"  >
+                                   <input type="hidden" name="category"   value="sections"/>
+                                   <input type="hidden" name="area"   value="body"/>
+                                   <input type="hidden" name="component"  value="/views/components/sections/section3.ejs"/>
+                                   <input type="hidden" name="section"   value="<%- section %>"/>
+                                   <input type="hidden" name="action"   value="change section"/>
+                                   <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 3</button>
+                                  
+                                 </form>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="row" style="height:100px;">
+                         <div class="col-lg-4">
+                        <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                         <form method="POST"  >
+                           <input type="hidden" name="category"   value="sections"/>
+                           <input type="hidden" name="area"   value="body"/>
+                           <input type="hidden" name="component"  value="/views/components/sections/section4.ejs"/>
+                           <input type="hidden" name="section"   value="<%- section %>"/>
+                           <input type="hidden" name="action"   value="change section"/>
+                           <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 4</button>
+                          
+                         </form>
+                       </div>
+                        </div>
+                         <div class="col-lg-4">
+                          <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+                        </div>
+                         <div class="col-lg-4">
+                          <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+                        </div>
+                       </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="modal fade" id="<%- widget %>DeleteSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirm Section Deletion</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container">
+                        <div class="row" style="height:100px;">
+                          <div class="col-lg-12">
+                         <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                            <form method="POST"  >
+                                <input type="hidden" name="category"   value="sections"/>
+                                <input type="hidden" name="area"   value="body"/>
+                               <!--<input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>--> 
+                                <input type="hidden" name="section"   value="<%- section %>"/>
+                                <input type="hidden" name="action"   value="delete section"/>
+                                <label>Are you sure you want to delete section?</label>
+                              
+                                <div class="modal-footer">
+                                    <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                  <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                              
+                                </div>
+                              </form>
+                        </div>
+                         </div>
+                     
+                      
+                        </div>
+                    
+                      </div>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="<%- widget %>DeleteWidgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container">
+                          <div class="row" style="height:100px;">
+                            <div class="col-lg-12">
+                           <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                              <form method="POST"  >
+                                  <input type="hidden" name="action"   value="delete widget"/>
+                                  <input type="hidden" name="area"   value="sections"/>
+                                  <input type="hidden" name="category" value="widgets"/> 
+                                  <input type="hidden" name="section" value="<%-section%>"/>  
+                                  <input type="hidden" name="side" value="<%-side%>"/> 
+                                  <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/> 
+                                  <label>Are you sure you want to delete widget?</label>
+                                
+                                  <div class="modal-footer">
+                                      <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                    <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                                
+                                  </div>
+                                </form>
+                          </div>
+                           </div>
+                       
+                        
+                          </div>
+                      
+                        </div>
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="<%- widget %>PromoteWidgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container">
+                            <div class="row" style="height:100px;">
+                              <div class="col-lg-12">
+                             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                                <form method="POST"  >
+                               
+                                    <input type="hidden" name="action1"   value="promote widget"/>
+                                    <input type="hidden" name="area1"   value="sections"/>
+                                    <input type="hidden" name="category1" value="widgets"/> 
+                                    <input type="hidden" name="section1" value="<%-section%>"/>  
+                                    <input type="hidden" name="side1" value="<%-side%>"/> 
+                                    <input type="hidden" name="widgetindex1" value="<%-widgetindex%>"/> 
+                                    <label>Are you sure you want to promote widget?</label>
+                                  
+                                    <div class="modal-footer">
+                                        <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                      <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                                  
+                                    </div>
+                                  </form>
+                            </div>
+                             </div>
+                         
+                          
+                            </div>
+                        
+                          </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="<%- widget %>DemoteWidgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Demotion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="container">
+                              <div class="row" style="height:100px;">
+                                <div class="col-lg-12">
+                               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                                  <form method="POST"  >
+                                 
+                                      <input type="hidden" name="action1"   value="demote widget"/>
+                                      <input type="hidden" name="area1"   value="sections"/>
+                                      <input type="hidden" name="category1" value="widgets"/> 
+                                      <input type="hidden" name="section1" value="<%-section%>"/>  
+                                      <input type="hidden" name="side1" value="<%-side%>"/> 
+                                      <input type="hidden" name="widgetindex1" value="<%-widgetindex%>"/> 
+                                      <label>Are you sure you want to demote widget?</label>
+                                    
+                                      <div class="modal-footer">
+                                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                        <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                                    
+                                      </div>
+                                    </form>
+                              </div>
+                               </div>
+                           
+                            
+                              </div>
+                          
+                            </div>
+                          </div>
+                        
+                        </div>
+                      </div>
+                    </div>
+
+                 <%}%>
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,13 @@
+.modal-body{
+    min-height:600px !important;
+    min-width: 800px !important;
+    
+}
+.modal-dialog{
+    max-width: 1500px !important;
+}
+@font-face {
+    font-family: Stonehenge Regular;
+    src: url("/assets/fonts/stonehen.ttf");
+    
+    }

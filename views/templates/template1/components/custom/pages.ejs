@@ -1,0 +1,153 @@
+
+<div class="btn-group">
+  <button class="btn btn-primary btn-sm" type="button">
+   Options
+  </button>
+  <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+<div class="dropdown-menu">
+  <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#pgsModal" data-whatever="@mdo">Add Page</button>
+  <div class="dropdown-divider"></div>
+<!--  <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#teamModal" data-whatever="@mdo">Add Team</button>
+  <div class="dropdown-divider"></div>-->
+  <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#playerModal" data-whatever="@mdo">Add Member</button>
+  <div class="dropdown-divider"></div>
+  <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#pgsModal" data-whatever="@mdo">Edit Page</button>
+  <div class="dropdown-divider"></div>
+  <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#pgsModal" data-whatever="@mdo">Delete Page</button>
+</div></div>
+<br>
+
+
+
+<div>
+<table class="table">
+        <thead class="thead-light">
+          <tr>
+             <th scope="col">Page</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+
+   
+            <% pages.forEach(function(row){%>
+              <tr>
+              <td><a href='/<%- row.name %>' target="blank"><%=row.pagename%></a></td>
+              <td><%=row.pagetitle%></td>
+              </tr>
+              <%});%>
+         
+        </tbody>
+      </table>
+ </div>
+
+ <div class="modal fade" id="pgsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Page</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="">
+      <div class="modal-body">
+      
+          <div class="form-group">
+            <label for="page-name" class="col-form-label">Page Name:</label>
+            <input type="text" class="form-control"  name="pagename">
+            <input type="hidden" value="layout" class="form-control"  name="pagelayout">
+            <input type="hidden" value="page" class="form-control" name="pagetype">
+          </div>
+     
+          <div class="form-group">
+            <label for="page-title" class="col-form-label">Page Title:</label>
+            <input class="form-control" id="page-title" name="pagetitle">
+          </div>
+       
+   
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Save</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Team</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="">
+      <div class="modal-body">
+      
+          <div class="form-group">
+            <label for="page-name" class="col-form-label">Team Name:</label>
+            <input type="text" class="form-control"  name="pagename">
+            <input type="hidden" value="layout" class="form-control" name="pagelayout">
+            <input type="hidden" value="team" class="form-control" name="pagetype">
+          </div>
+     
+          <div class="form-group">
+            <label for="page-title" class="col-form-label">Other Info:</label>
+            <input class="form-control" id="page-title" name="pagetitle">
+          </div>
+       
+   
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Save</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Member</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="">
+      <div class="modal-body">
+      
+          <div class="form-group">
+              <label for="page-title" class="col-form-label">Title:</label>
+              <input class="form-control" id="page-title" name="pagetitle" placeholder="Mr./Mrs./Prof./Dr./Eng.">
+            </div>
+          <div class="form-group">
+            <label for="page-name" class="col-form-label">Member Name:</label>
+            <input type="text" class="form-control"  name="pagename">
+            <input type="hidden" value="layout" class="form-control" id="page-layout" name="pagelayout">
+            <input type="hidden" value="player" class="form-control" name="pagetype">
+          </div>
+     
+         
+       
+   
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Save</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

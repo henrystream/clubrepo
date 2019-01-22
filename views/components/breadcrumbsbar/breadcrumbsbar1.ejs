@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+  <% var str=pageData.breadcrumbsbar.style.background+pageData.breadcrumbsbar.style.color+pageData.breadcrumbsbar.style.fontfamily+pageData.breadcrumbsbar.style.fontsize; %>
+    <ol class="breadcrumb" style=<%= str %>  
+      >
+      <% var x=0; %>
+      <% pageData.breadcrumbsbar.links.forEach((link)=>{%>
+      <li class="breadcrumb-item"><a href="<%= pageData.breadcrumbsbar.urls[x]%>"><%= link %></a></li>
+      <% x++; %>
+      <%});%>
+ 
+    </ol>
+    <h4><%- pageData.breadcrumbsbar.data %></h4>
+  </nav>

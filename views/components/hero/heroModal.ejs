@@ -1,0 +1,131 @@
+<% var heropath=pageComponents.root_path+pageComponents.layoutcomponents[0].pageComponents.header.components.hero.type %>
+<%- include(heropath) %> 
+
+
+<!--Area for changing the component-->
+
+<% if(pageData.editmode) { %>
+
+ <div class="btn-group">
+    <button class="btn btn-danger btn-sm" type="button">
+     Manage Hero
+    </button>
+    <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+<div class="dropdown-menu">
+    <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#heroModal" data-whatever="@mdo">Add Hero bar</button>
+    <div class="dropdown-divider"></div>
+    <button type="button" class="dropdown-item" data-toggle="modal" data-target="#heroDataModal" data-whatever="@mdo">Add Hero data</button>
+</div></div>
+ <% } %>    
+
+
+     
+
+ <div class="modal fade" id="heroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Add Hero bar</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         <div class="container">
+           <div class="row" style="height:100px;">
+             <div class="col-lg-4">
+            <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+               <form method="POST"  >
+                   <input type="hidden" name="category"   value="hero"/>
+                   <input type="hidden" name="area"   value="header"/>
+                   <input type="hidden" name="component"  value="/views/components/hero/hero1.ejs"/>
+                   <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Hero section 1</button>
+                  
+                 </form>
+           </div>
+            </div>
+             <div class="col-lg-4">
+                <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                <form method="POST"  >
+                  <input type="hidden" name="category"   value="hero"/>
+                  <input type="hidden" name="area"   value="header"/>
+                   <input type="hidden" name="component"  value="/views/components/hero/hero2.ejs"/>
+                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Hero section 2</button>
+                 
+                </form>
+             </div>
+            </div>
+             <div class="col-lg-4">
+              <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                  <form method="POST"  >
+                      <input type="hidden" name="category"   value="hero"/>
+                      <input type="hidden" name="area"   value="header"/>
+                      <input type="hidden" name="component"  value="/views/components/hero/hero3.ejs"/>
+                      <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Hero section 3</button>
+                     
+                    </form>
+             </div>
+            </div>
+           </div>
+           <div class="row" style="height:100px;">
+            <div class="col-lg-4">
+           <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+           </div>
+            <div class="col-lg-4">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+           </div>
+            <div class="col-lg-4">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+           </div>
+          </div>
+         </div>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Save</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+
+ <div class="modal fade" id="heroDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Hero bar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row" style="height:100px;">
+            <div class="col-lg-12">
+           <div class="custom_model" >
+              <form id="target"  method="POST">
+                <textarea id="summernote1" name="editordata"></textarea>
+                <input type="hidden" name="area"   value="header"/>
+                <input type="hidden" name="category" value="hero"/>     
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn">Save Text</button>
+                  </div>
+              </form>		
+          </div>
+           </div>
+        
+        
+          </div>
+       
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>
+
+

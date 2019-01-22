@@ -1,0 +1,61 @@
+<% var bodyPath=pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.body.type %>
+<%- include(bodyPath) %> 
+
+
+<!--Area for changing the component-->
+
+<% if(wdate!=undefined) { %>
+<!--  <button type="button" style="font-size: 10px !important;background-color: red;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#bodyModal" data-whatever="@mdo">Add Body</button>
+ <button type="button" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#bodystyleModal" data-whatever="@mdo">Edit Body Style</button> -->
+ <div class="btn-group" style="visibility: hidden;">
+  <button class="btn btn-info btn-sm" type="button">
+   Manage Body 
+  </button>
+  <button type="button" class="btn btn-sm btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+<div class="dropdown-menu">
+<button type="button" class="dropdown-item"  data-toggle="modal" data-target="#bodystyleModal" data-whatever="@mdo">Edit Body Style</button>
+
+</div>
+</div>
+   
+
+
+     
+
+
+ <div class="modal fade" id="bodystyleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Edit body style</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:100px;">
+              <div class="col-lg-12">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;">
+                <form method="POST" >
+                  <label>Background-color:</label>
+                    <input type="text" name="color" placeholder="add background color like #ccc"/>
+                    <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Save</button>
+                  </form>
+            </div>
+             </div>
+         
+            </div>
+        
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>  

@@ -1,0 +1,17 @@
+{
+"pagename":"/views/templates/template1/startpage.ejs",
+"title":"Start page",
+"layout":"template1",
+"layoutParts":3,
+"1.1":1,
+"1.2":2,
+"1.3":1,
+"1.1.1":1,
+"1.2.1":1,
+"1.3.1":1,
+"1.1.1.1":"components/startpage.ejs/1.1.1.1.ejs",
+"1.2.1.1":"components/startpage.ejs/1.2.1.1.ejs",
+"1.2.2.1":"components/startpage.ejs/1.2.2.1.ejs",
+"1.3.1.1":"components/startpage.ejs/1.3.1.1.ejs",
+"otherinfo":""
+}

@@ -1,0 +1,23 @@
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+          <nav id="nav-menu-container">
+              <ul class="nav-menu">
+                  <% var x=0; %>
+                  <% pageList.forEach((link)=>{%>
+                  
+                <li class="nav-item active">
+                    <a class="nav-link"  href="/<%= link %>"><span class="sr-only">(current)</span><%- link %></a>
+                </li>
+                <% x++; %>
+                <%});%>
+              </ul>
+            </nav>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>

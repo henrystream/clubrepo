@@ -1,0 +1,16 @@
+{
+"pagename":"/views/templates/layout/Events.ejs",
+"title":"page",
+"layout":"layout",
+"layoutParts":3,
+"1.1":1,
+"1.2":1,
+"1.3":1,
+"1.1.1":1,
+"1.2.1":1,
+"1.3.1":1,
+"1.1.1.1":"components/Events.ejs/1.1.1.1.ejs",
+"1.2.1.1":"components/Events.ejs/1.2.1.1.ejs",
+"1.3.1.1":"components/Events.ejs/1.3.1.1.ejs",
+"otherinfo":""
+}

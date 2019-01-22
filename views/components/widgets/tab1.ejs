@@ -1,0 +1,1873 @@
+<% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs!=undefined){ %>
+<nav style="margin-top:15px;">
+    <div class="nav nav-tabs" id="<%-widget%>nav-tab" role="tablist">
+
+       
+          <% for(var c=0;c<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs.length);c++){%>
+          <%if(c===0){%>
+            <a class="nav-item nav-link active" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>" aria-selected="true">
+          <%}else{%>
+            <a class="nav-item nav-link" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>" aria-selected="false">
+          <%}%>
+           <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>
+           </a>
+            <%}%>
+       
+ 
+    </div>
+  </nav>
+  <div class="tab-content" id="<%-widget%>nav-tabContent">
+      <% for(var x=0;x<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs.length);x++){%>
+        <%if(x===0){%>
+        <div style="min-height:100px;background-color:transparent;" class="tab-pane fade show active" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>" role="tabpanel" aria-labelledby="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>-tab">
+          <%}else{%>
+            <div style="min-height:100px;background-color:transparent;" class="tab-pane fade" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>" role="tabpanel" aria-labelledby="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>-tab">
+         <%}%>
+
+         <div class="modal fade" id="widgetsModal<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Left Section Area</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-4">
+                     <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                        <form method="POST"  >
+                            <input type="hidden" name="area"   value="sections"/>
+                            <input type="hidden" name="category" value="widgets"/> 
+                            <input type="hidden" name="section" value="<%-section%>"/>  
+                            <input type="hidden" name="side" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabs" value="<%-x%>"/> 
+                            <input type="hidden" name="dt" value="<%-y%>"/> 
+                            <input type="hidden" name="component"  value="/views/components/widgets/textwidget.ejs"/>
+                            <input type="hidden" name="action" value="addwidgettotab"/> 
+
+                            <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Text widget</button>
+                           
+                          </form>
+                    </div>
+                     </div>
+                      <div class="col-lg-4">
+                         <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                         <form method="POST"  >
+                          <input type="hidden" name="category"   value="sections"/>
+                          <input type="hidden" name="section"   value="<%- component %>"/>
+                          <input type="hidden" name="area"   value="1"/>
+                          <input type="hidden" name="component"  value="/views/components/nav/navModal.ejs"/>
+                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Nav widget</button>
+                         
+                         </form>
+                      </div>
+                     </div>
+                      <div class="col-lg-4">
+                       <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                          <form method="POST"  >
+                              <input type="hidden" name="category"   value="sections"/>
+                              <input type="hidden" name="section"   value="<%- component %>"/>
+                              <input type="hidden" name="area"   value="1"/>
+                              <input type="hidden" name="component"  value="/views/components/widgets/carousel.ejs"/>
+                              <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Carousel widget</button>
+                             
+                             </form>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="row" style="height:100px;">
+                     <div class="col-lg-4">
+                    <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                        <form method="POST"  >
+                            <input type="hidden" name="category"   value="sections"/>
+                            <input type="hidden" name="section"   value="<%- component %>"/>
+                            <input type="hidden" name="area"   value="1"/>
+                            <input type="hidden" name="component"  value="/views/components/widgets/tab.ejs"/>
+                            <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">widget</button>
+                           
+                           </form>
+                   </div>
+                    </div>
+                     <div class="col-lg-4">
+                      <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+                    </div>
+                     <div class="col-lg-4">
+                      <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+                    </div>
+                   </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         <div class="row">
+            <div class="col-lg-12">
+                <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft!=undefined){ %>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex]!=undefined){ %>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs!=undefined){ %>
+          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data!=undefined){ %>
+          <% for(var y=0;y<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data.length);y++){%>
+          <% pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data%>
+          <% var tabwidget="tabwidget"+y+"tab"+x %>
+
+          <div class="modal fade" id="<%- tabwidget %>PromoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Promotion</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                        <form method="POST"  >
+
+                            <input type="hidden" name="actiontab"   value="promote tab widget"/>
+                            <input type="hidden" name="areatab"   value="sections"/>
+                            <input type="hidden" name="categorytab" value="widgets"/> 
+                            <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                            <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                            <input type="hidden" name="dttab" value="<%-y%>"/> 
+                            <label>Are you sure you want to promote widget?</label>
+                          
+                            <div class="modal-footer">
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                              <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                          
+                            </div>
+                          </form>
+                    </div>
+                     </div>
+                 
+                  
+                    </div>
+                
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+          <div id="<%- tabwidget %>pp" style="min-height:20px;margin:10px;">
+              <div>
+                <% if(side==="widgetsleft"){%>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft!=undefined){ %>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex]!=undefined){ %>
+                      <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs!=undefined){ %>
+
+                        <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x]!=undefined){ %>
+                          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data!=undefined){ %>
+                            <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y]!=undefined){ %>
+                              <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data!=undefined){ %>
+                   <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %> 
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                 <% if(side==="widgetsright"){%>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright!=undefined){ %>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex]!=undefined){ %>
+                      <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs!=undefined){ %>
+                        <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x]!=undefined){ %>
+                          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data!=undefined){ %>
+                            <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y]!=undefined){ %>
+                              <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data!=undefined){ %>
+                        <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data %> 
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <% if(side==="widgetsmiddle"){%>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle!=undefined){ %>
+                      <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex]!=undefined){ %>
+                        <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs!=undefined){ %>
+
+                          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x]!=undefined){ %>
+                            <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data!=undefined){ %>
+                              <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y]!=undefined){ %>
+                                <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data!=undefined){ %>
+                     <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data %> 
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                   </div>
+                 <% if(pageData.editmode) { %>
+            
+                     <div class="btn-group">
+   
+                        <button class="btn btn-danger btn-sm" type="button">
+                         Manage Widget
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                    <div class="dropdown-menu">
+                         <button type="button" class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>Modal<%-x%>" data-whatever="@mdo">Edit widget data</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DeleteWidgetModal<%-x%>" data-whatever="@mdo">Delete widget</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>PromoteWidgetModal<%-x%>" data-whatever="@mdo">Promote widget</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DemoteWidgetModal<%-x%>" data-whatever="@mdo">Demote widget</button>
+   
+                        
+                    </div></div>
+                     <% } %> 
+         </div>
+
+         <div class="modal fade" id="<%- tabwidget %>Modal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Widget Data</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div class="custom_model" >
+                        <form id="target"  method="POST">
+                          <textarea id="<%-tabwidget%>" name="editordata">
+                            <% if(side==="widgetsleft"){%>
+                              <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %>  
+                            <%}%>
+                            <% if(side==="widgetsright"){%>
+                              <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                              <%}%>
+                              <% if(side==="widgetsmiddle"){%>
+                                <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                                <%}%>
+                          </textarea>
+                          <input type="hidden" name="area"   value="sections"/>
+                          <input type="hidden" name="category" value="widgets"/> 
+                          <input type="hidden" name="section" value="<%-section%>"/>  
+                          <input type="hidden" name="side" value="<%-side%>"/> 
+                          <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                          <input type="hidden" name="tabs" value="<%-x%>"/> 
+                          <input type="hidden" name="dt" value="<%-y%>"/> 
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn">Save Data</button>
+                            </div>
+                        </form>		
+                    </div>
+                     </div>
+        
+                  
+                  
+                  
+                    </div>
+                 
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="<%- tabwidget %>DeleteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                        <form method="POST"  >
+
+                            <input type="hidden" name="action"   value="delete tab widget"/>
+                            <input type="hidden" name="area"   value="sections"/>
+                            <input type="hidden" name="category" value="widgets"/> 
+                            <input type="hidden" name="section" value="<%-section%>"/>  
+                            <input type="hidden" name="side" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabs" value="<%-x%>"/> 
+                            <input type="hidden" name="dt" value="<%-(y)%>"/> 
+                            <label>Are you sure you want to delete widget?</label>
+                          
+                            <div class="modal-footer">
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                              <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                          
+                            </div>
+                          </form>
+                    </div>
+                     </div>
+                 
+                  
+                    </div>
+                
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+
+      
+          <div class="modal fade" id="<%- tabwidget %>DemoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Demotion</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                        <form method="POST"  >
+
+                            <input type="hidden" name="actiontab"   value="demote tab widget"/>
+                            <input type="hidden" name="areatab"   value="sections"/>
+                            <input type="hidden" name="categorytab" value="widgets"/> 
+                            <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                            <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                            <input type="hidden" name="dttab" value="<%-(y)%>"/> 
+                            <label>Are you sure you want to demote widget?</label>
+                          
+                            <div class="modal-footer">
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                              <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                          
+                            </div>
+                          </form>
+                    </div>
+                     </div>
+                 
+                  
+                    </div>
+                
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+         
+
+          <%}%>
+          <%}%>
+          <%}%>
+          <%}%>
+          <%}%>
+<!--Middle-->
+<% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle!=undefined){%>
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex]!=undefined){%>
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs!=undefined){%>
+          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data!=undefined){ %>
+            <% for(var y=0;y<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data.length);y++){%>
+            <% pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data%>
+            <% var tabwidget="tabwidget"+y+"tab"+x %>
+  
+            <div class="modal fade" id="<%- tabwidget %>PromoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Promotion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                          <form method="POST"  >
+  
+                              <input type="hidden" name="actiontab"   value="promote tab widget"/>
+                              <input type="hidden" name="areatab"   value="sections"/>
+                              <input type="hidden" name="categorytab" value="widgets"/> 
+                              <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                              <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                              <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                              <input type="hidden" name="dttab" value="<%-y%>"/> 
+                              <label>Are you sure you want to promote widget?</label>
+                            
+                              <div class="modal-footer">
+                                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                            
+                              </div>
+                            </form>
+                      </div>
+                       </div>
+                   
+                    
+                      </div>
+                  
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+  
+            <div id="<%- tabwidget %>pp" style="min-height:20px;margin:10px;">
+                <div>
+                  <% if(side==="widgetsleft"){%>
+                     <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %> 
+                   <%}%>
+                   <% if(side==="widgetsright"){%>
+                     <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data %> 
+                     <%}%>
+                     <% if(side==="widgetsmiddle"){%>
+                       <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data %> 
+                       <%}%>
+                     </div>
+                   <% if(pageData.editmode) { %>
+              
+                       <div class="btn-group">
+     
+                          <button class="btn btn-danger btn-sm" type="button">
+                           Manage Widget
+                          </button>
+                          <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                      <div class="dropdown-menu">
+                           <button type="button" class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>Modal<%-x%>" data-whatever="@mdo">Edit widget data</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DeleteWidgetModal<%-x%>" data-whatever="@mdo">Delete widget</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>PromoteWidgetModal<%-x%>" data-whatever="@mdo">Promote widget</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DemoteWidgetModal<%-x%>" data-whatever="@mdo">Demote widget</button>
+     
+                          
+                      </div></div>
+                       <% } %> 
+           </div>
+  
+           <div class="modal fade" id="<%- tabwidget %>Modal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Widget Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div class="custom_model" >
+                          <form id="target"  method="POST">
+                            <textarea id="<%-tabwidget%>" name="editordata">
+                              <% if(side==="widgetsleft"){%>
+                                <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %>  
+                              <%}%>
+                              <% if(side==="widgetsright"){%>
+                                <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                                <%}%>
+                                <% if(side==="widgetsmiddle"){%>
+                                  <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                                  <%}%>
+                            </textarea>
+                            <input type="hidden" name="area"   value="sections"/>
+                            <input type="hidden" name="category" value="widgets"/> 
+                            <input type="hidden" name="section" value="<%-section%>"/>  
+                            <input type="hidden" name="side" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabs" value="<%-x%>"/> 
+                            <input type="hidden" name="dt" value="<%-y%>"/> 
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn">Save Data</button>
+                              </div>
+                          </form>		
+                      </div>
+                       </div>
+          
+                    
+                    
+                    
+                      </div>
+                   
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="modal fade" id="<%- tabwidget %>DeleteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                          <form method="POST"  >
+  
+                              <input type="hidden" name="action"   value="delete tab widget"/>
+                              <input type="hidden" name="area"   value="sections"/>
+                              <input type="hidden" name="category" value="widgets"/> 
+                              <input type="hidden" name="section" value="<%-section%>"/>  
+                              <input type="hidden" name="side" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                              <input type="hidden" name="tabs" value="<%-x%>"/> 
+                              <input type="hidden" name="dt" value="<%-(y)%>"/> 
+                              <label>Are you sure you want to delete widget?</label>
+                            
+                              <div class="modal-footer">
+                                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                            
+                              </div>
+                            </form>
+                      </div>
+                       </div>
+                   
+                    
+                      </div>
+                  
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+  
+  
+        
+            <div class="modal fade" id="<%- tabwidget %>DemoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Demotion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                          <form method="POST"  >
+  
+                              <input type="hidden" name="actiontab"   value="demote tab widget"/>
+                              <input type="hidden" name="areatab"   value="sections"/>
+                              <input type="hidden" name="categorytab" value="widgets"/> 
+                              <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                              <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                              <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                              <input type="hidden" name="dttab" value="<%-(y)%>"/> 
+                              <label>Are you sure you want to demote widget?</label>
+                            
+                              <div class="modal-footer">
+                                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                            
+                              </div>
+                            </form>
+                      </div>
+                       </div>
+                   
+                    
+                      </div>
+                  
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+  
+           
+  
+        
+            <%}%>
+            <%}%>
+            <%}%>
+            <%}%>
+            <%}%>
+  
+         
+  <!--Rigth-->
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright!=undefined){%>
+    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex]!=undefined){%>
+    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs!=undefined){%>
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data!=undefined){ %>
+    <% for(var y=0;y<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data.length);y++){%>
+    <% pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data%>
+    <% var tabwidget="tabwidget"+y+"tab"+x %>
+
+    <div class="modal fade" id="<%- tabwidget %>PromoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Promotion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                  <form method="POST"  >
+
+                      <input type="hidden" name="actiontab"   value="promote tab widget"/>
+                      <input type="hidden" name="areatab"   value="sections"/>
+                      <input type="hidden" name="categorytab" value="widgets"/> 
+                      <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                      <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                      <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                      <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                      <input type="hidden" name="dttab" value="<%-y%>"/> 
+                      <label>Are you sure you want to promote widget?</label>
+                    
+                      <div class="modal-footer">
+                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                        <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                    
+                      </div>
+                    </form>
+              </div>
+               </div>
+           
+            
+              </div>
+          
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <div id="<%- tabwidget %>pp" style="min-height:20px;margin:10px;">
+        <div>
+          <% if(side==="widgetsleft"){%>
+             <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %> 
+           <%}%>
+           <% if(side==="widgetsright"){%>
+             <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data %> 
+             <%}%>
+             <% if(side==="widgetsmiddle"){%>
+               <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data %> 
+               <%}%>
+             </div>
+           <% if(pageData.editmode) { %>
+      
+               <div class="btn-group">
+
+                  <button class="btn btn-danger btn-sm" type="button">
+                   Manage Widget
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+              <div class="dropdown-menu">
+                   <button type="button" class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>Modal<%-x%>" data-whatever="@mdo">Edit widget data</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DeleteWidgetModal<%-x%>" data-whatever="@mdo">Delete widget</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>PromoteWidgetModal<%-x%>" data-whatever="@mdo">Promote widget</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DemoteWidgetModal<%-x%>" data-whatever="@mdo">Demote widget</button>
+
+                  
+              </div></div>
+               <% } %> 
+   </div>
+
+   <div class="modal fade" id="<%- tabwidget %>Modal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Widget Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div class="custom_model" >
+                  <form id="target"  method="POST">
+                    <textarea id="<%-tabwidget%>" name="editordata">
+                      <% if(side==="widgetsleft"){%>
+                        <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %>  
+                      <%}%>
+                      <% if(side==="widgetsright"){%>
+                        <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                        <%}%>
+                        <% if(side==="widgetsmiddle"){%>
+                          <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                          <%}%>
+                    </textarea>
+                    <input type="hidden" name="area"   value="sections"/>
+                    <input type="hidden" name="category" value="widgets"/> 
+                    <input type="hidden" name="section" value="<%-section%>"/>  
+                    <input type="hidden" name="side" value="<%-side%>"/> 
+                    <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                    <input type="hidden" name="tabs" value="<%-x%>"/> 
+                    <input type="hidden" name="dt" value="<%-y%>"/> 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn">Save Data</button>
+                      </div>
+                  </form>		
+              </div>
+               </div>
+  
+            
+            
+            
+              </div>
+           
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="<%- tabwidget %>DeleteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                  <form method="POST"  >
+
+                      <input type="hidden" name="action"   value="delete tab widget"/>
+                      <input type="hidden" name="area"   value="sections"/>
+                      <input type="hidden" name="category" value="widgets"/> 
+                      <input type="hidden" name="section" value="<%-section%>"/>  
+                      <input type="hidden" name="side" value="<%-side%>"/> 
+                      <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                      <input type="hidden" name="tabs" value="<%-x%>"/> 
+                      <input type="hidden" name="dt" value="<%-(y)%>"/> 
+                      <label>Are you sure you want to delete widget?</label>
+                    
+                      <div class="modal-footer">
+                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                        <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                    
+                      </div>
+                    </form>
+              </div>
+               </div>
+           
+            
+              </div>
+          
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="modal fade" id="<%- tabwidget %>DemoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Demotion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                  <form method="POST"  >
+
+                      <input type="hidden" name="actiontab"   value="demote tab widget"/>
+                      <input type="hidden" name="areatab"   value="sections"/>
+                      <input type="hidden" name="categorytab" value="widgets"/> 
+                      <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                      <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                      <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                      <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                      <input type="hidden" name="dttab" value="<%-(y)%>"/> 
+                      <label>Are you sure you want to demote widget?</label>
+                    
+                      <div class="modal-footer">
+                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                        <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                    
+                      </div>
+                    </form>
+              </div>
+               </div>
+           
+            
+              </div>
+          
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+   
+
+
+    <%}%>
+    <%}%>
+    <%}%>
+    <%}%>
+    <%}%>
+
+ 
+
+   
+          
+           
+                  
+
+         
+                
+         
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <% if(pageData.editmode) { %>
+           
+                  <div class="btn-group">
+        
+                     <button class="btn btn-danger btn-sm" type="button">
+                      Manage <%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title%>
+                     </button>
+                     <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       <span class="sr-only">Toggle Dropdown</span>
+                     </button>
+                    <div class="dropdown-menu">
+                    <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>NewTabModal<%-x%>" data-whatever="@mdo">Add New Tab</button>
+                    <div class="dropdown-divider"></div> 
+                    <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>EditTabModal<%-x%>" data-whatever="@mdo">Edit Tab Title</button>
+                    <div class="dropdown-divider"></div> 
+                    <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#widgetsModal<%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>" data-whatever="@mdo">Add Widget to <%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title%></button> 
+                      <div class="dropdown-divider"></div>
+                      <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                      <div class="dropdown-divider"></div> 
+                      <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>DeleteTabModal<%-x%>" data-whatever="@mdo">Delete Tab</button>
+                      <div class="dropdown-divider"></div>
+                      <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>DeleteTabWidgetModal<%-x%>" data-whatever="@mdo">Delete widget</button>
+        
+                     
+                 </div></div>
+                <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright!=undefined){ %>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex]!=undefined){ %>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs!=undefined){ %>
+          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data!=undefined){ %>
+          <% for(var y=0;y<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data.length);y++){%>
+          <% pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data%>
+          <% var tabwidget="tabwidget"+y+"tab"+x %>
+
+          <div class="modal fade" id="<%- tabwidget %>PromoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Promotion</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                        <form method="POST"  >
+
+                            <input type="hidden" name="actiontab"   value="promote tab widget"/>
+                            <input type="hidden" name="areatab"   value="sections"/>
+                            <input type="hidden" name="categorytab" value="widgets"/> 
+                            <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                            <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                            <input type="hidden" name="dttab" value="<%-y%>"/> 
+                            <label>Are you sure you want to promote widget?</label>
+                          
+                            <div class="modal-footer">
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                              <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                          
+                            </div>
+                          </form>
+                    </div>
+                     </div>
+                 
+                  
+                    </div>
+                
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+          <div id="<%- tabwidget %>pp" style="min-height:20px;margin:10px;">
+              <div>
+                <% if(side==="widgetsleft"){%>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft!=undefined){ %>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex]!=undefined){ %>
+                      <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs!=undefined){ %>
+
+                        <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x]!=undefined){ %>
+                          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data!=undefined){ %>
+                            <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y]!=undefined){ %>
+                              <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data!=undefined){ %>
+                   <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %> 
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                 <% if(side==="widgetsright"){%>
+                  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright!=undefined){ %>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex]!=undefined){ %>
+                      <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs!=undefined){ %>
+                        <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x]!=undefined){ %>
+                          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data!=undefined){ %>
+                            <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y]!=undefined){ %>
+                              <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data!=undefined){ %>
+                        <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data %> 
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <%}%>
+                   <% if(side==="widgetsmiddle"){%>
+                    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle!=undefined){ %>
+                      <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex]!=undefined){ %>
+                        <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs!=undefined){ %>
+
+                          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x]!=undefined){ %>
+                            <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data!=undefined){ %>
+                              <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y]!=undefined){ %>
+                                <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data!=undefined){ %>
+                     <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data %> 
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                     <%}%>
+                   </div>
+                 <% if(pageData.editmode) { %>
+            
+                     <div class="btn-group">
+   
+                        <button class="btn btn-danger btn-sm" type="button">
+                         Manage Widget
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                    <div class="dropdown-menu">
+                         <button type="button" class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>Modal<%-x%>" data-whatever="@mdo">Edit widget data</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DeleteWidgetModal<%-x%>" data-whatever="@mdo">Delete widget</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>PromoteWidgetModal<%-x%>" data-whatever="@mdo">Promote widget</button>
+                         <div class="dropdown-divider"></div>
+                         <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DemoteWidgetModal<%-x%>" data-whatever="@mdo">Demote widget</button>
+   
+                        
+                    </div></div>
+                     <% } %> 
+         </div>
+
+         <div class="modal fade" id="<%- tabwidget %>Modal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Widget Data</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div class="custom_model" >
+                        <form id="target"  method="POST">
+                          <textarea id="<%-tabwidget%>" name="editordata">
+                            <% if(side==="widgetsleft"){%>
+                              <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %>  
+                            <%}%>
+                            <% if(side==="widgetsright"){%>
+                              <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                              <%}%>
+                              <% if(side==="widgetsmiddle"){%>
+                                <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                                <%}%>
+                          </textarea>
+                          <input type="hidden" name="area"   value="sections"/>
+                          <input type="hidden" name="category" value="widgets"/> 
+                          <input type="hidden" name="section" value="<%-section%>"/>  
+                          <input type="hidden" name="side" value="<%-side%>"/> 
+                          <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                          <input type="hidden" name="tabs" value="<%-x%>"/> 
+                          <input type="hidden" name="dt" value="<%-y%>"/> 
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn">Save Data</button>
+                            </div>
+                        </form>		
+                    </div>
+                     </div>
+        
+                  
+                  
+                  
+                    </div>
+                 
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="<%- tabwidget %>DeleteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                        <form method="POST"  >
+
+                            <input type="hidden" name="action"   value="delete tab widget"/>
+                            <input type="hidden" name="area"   value="sections"/>
+                            <input type="hidden" name="category" value="widgets"/> 
+                            <input type="hidden" name="section" value="<%-section%>"/>  
+                            <input type="hidden" name="side" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabs" value="<%-x%>"/> 
+                            <input type="hidden" name="dt" value="<%-(y)%>"/> 
+                            <label>Are you sure you want to delete widget?</label>
+                          
+                            <div class="modal-footer">
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                              <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                          
+                            </div>
+                          </form>
+                    </div>
+                     </div>
+                 
+                  
+                    </div>
+                
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+
+      
+          <div class="modal fade" id="<%- tabwidget %>DemoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Demotion</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row" style="height:100px;">
+                      <div class="col-lg-12">
+                     <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                        <form method="POST"  >
+
+                            <input type="hidden" name="actiontab"   value="demote tab widget"/>
+                            <input type="hidden" name="areatab"   value="sections"/>
+                            <input type="hidden" name="categorytab" value="widgets"/> 
+                            <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                            <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                            <input type="hidden" name="dttab" value="<%-(y)%>"/> 
+                            <label>Are you sure you want to demote widget?</label>
+                          
+                            <div class="modal-footer">
+                                <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                              <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                          
+                            </div>
+                          </form>
+                    </div>
+                     </div>
+                 
+                  
+                    </div>
+                
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+         
+
+          <%}%>
+          <%}%>
+          <%}%>
+          <%}%>
+          <%}%>
+<!--Middle-->
+<% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle!=undefined){%>
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex]!=undefined){%>
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs!=undefined){%>
+          <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data!=undefined){ %>
+            <% for(var y=0;y<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data.length);y++){%>
+            <% pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data%>
+            <% var tabwidget="tabwidget"+y+"tab"+x %>
+  
+            <div class="modal fade" id="<%- tabwidget %>PromoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Promotion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                          <form method="POST"  >
+  
+                              <input type="hidden" name="actiontab"   value="promote tab widget"/>
+                              <input type="hidden" name="areatab"   value="sections"/>
+                              <input type="hidden" name="categorytab" value="widgets"/> 
+                              <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                              <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                              <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                              <input type="hidden" name="dttab" value="<%-y%>"/> 
+                              <label>Are you sure you want to promote widget?</label>
+                            
+                              <div class="modal-footer">
+                                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                            
+                              </div>
+                            </form>
+                      </div>
+                       </div>
+                   
+                    
+                      </div>
+                  
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+  
+            <div id="<%- tabwidget %>pp" style="min-height:20px;margin:10px;">
+                <div>
+                  <% if(side==="widgetsleft"){%>
+                     <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %> 
+                   <%}%>
+                   <% if(side==="widgetsright"){%>
+                     <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data %> 
+                     <%}%>
+                     <% if(side==="widgetsmiddle"){%>
+                       <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data %> 
+                       <%}%>
+                     </div>
+                   <% if(pageData.editmode) { %>
+              
+                       <div class="btn-group">
+     
+                          <button class="btn btn-danger btn-sm" type="button">
+                           Manage Widget
+                          </button>
+                          <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                      <div class="dropdown-menu">
+                           <button type="button" class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>Modal<%-x%>" data-whatever="@mdo">Edit widget data</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DeleteWidgetModal<%-x%>" data-whatever="@mdo">Delete widget</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>PromoteWidgetModal<%-x%>" data-whatever="@mdo">Promote widget</button>
+                           <div class="dropdown-divider"></div>
+                           <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DemoteWidgetModal<%-x%>" data-whatever="@mdo">Demote widget</button>
+     
+                          
+                      </div></div>
+                       <% } %> 
+           </div>
+  
+           <div class="modal fade" id="<%- tabwidget %>Modal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Widget Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div class="custom_model" >
+                          <form id="target"  method="POST">
+                            <textarea id="<%-tabwidget%>" name="editordata">
+                              <% if(side==="widgetsleft"){%>
+                                <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %>  
+                              <%}%>
+                              <% if(side==="widgetsright"){%>
+                                <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                                <%}%>
+                                <% if(side==="widgetsmiddle"){%>
+                                  <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                                  <%}%>
+                            </textarea>
+                            <input type="hidden" name="area"   value="sections"/>
+                            <input type="hidden" name="category" value="widgets"/> 
+                            <input type="hidden" name="section" value="<%-section%>"/>  
+                            <input type="hidden" name="side" value="<%-side%>"/> 
+                            <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                            <input type="hidden" name="tabs" value="<%-x%>"/> 
+                            <input type="hidden" name="dt" value="<%-y%>"/> 
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn">Save Data</button>
+                              </div>
+                          </form>		
+                      </div>
+                       </div>
+          
+                    
+                    
+                    
+                      </div>
+                   
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="modal fade" id="<%- tabwidget %>DeleteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                          <form method="POST"  >
+  
+                              <input type="hidden" name="action"   value="delete tab widget"/>
+                              <input type="hidden" name="area"   value="sections"/>
+                              <input type="hidden" name="category" value="widgets"/> 
+                              <input type="hidden" name="section" value="<%-section%>"/>  
+                              <input type="hidden" name="side" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                              <input type="hidden" name="tabs" value="<%-x%>"/> 
+                              <input type="hidden" name="dt" value="<%-(y)%>"/> 
+                              <label>Are you sure you want to delete widget?</label>
+                            
+                              <div class="modal-footer">
+                                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                            
+                              </div>
+                            </form>
+                      </div>
+                       </div>
+                   
+                    
+                      </div>
+                  
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+  
+  
+        
+            <div class="modal fade" id="<%- tabwidget %>DemoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Demotion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row" style="height:100px;">
+                        <div class="col-lg-12">
+                       <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                          <form method="POST"  >
+  
+                              <input type="hidden" name="actiontab"   value="demote tab widget"/>
+                              <input type="hidden" name="areatab"   value="sections"/>
+                              <input type="hidden" name="categorytab" value="widgets"/> 
+                              <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                              <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                              <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                              <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                              <input type="hidden" name="dttab" value="<%-(y)%>"/> 
+                              <label>Are you sure you want to demote widget?</label>
+                            
+                              <div class="modal-footer">
+                                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                                <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                            
+                              </div>
+                            </form>
+                      </div>
+                       </div>
+                   
+                    
+                      </div>
+                  
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+  
+           
+  
+        
+            <%}%>
+            <%}%>
+            <%}%>
+            <%}%>
+            <%}%>
+  
+         
+  <!--Rigth-->
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright!=undefined){%>
+    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex]!=undefined){%>
+    <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs!=undefined){%>
+  <% if(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data!=undefined){ %>
+    <% for(var y=0;y<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data.length);y++){%>
+    <% pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data%>
+    <% var tabwidget="tabwidget"+y+"tab"+x %>
+
+    <div class="modal fade" id="<%- tabwidget %>PromoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Promotion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                  <form method="POST"  >
+
+                      <input type="hidden" name="actiontab"   value="promote tab widget"/>
+                      <input type="hidden" name="areatab"   value="sections"/>
+                      <input type="hidden" name="categorytab" value="widgets"/> 
+                      <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                      <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                      <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                      <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                      <input type="hidden" name="dttab" value="<%-y%>"/> 
+                      <label>Are you sure you want to promote widget?</label>
+                    
+                      <div class="modal-footer">
+                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                        <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                    
+                      </div>
+                    </form>
+              </div>
+               </div>
+           
+            
+              </div>
+          
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <div id="<%- tabwidget %>pp" style="min-height:20px;margin:10px;">
+        <div>
+          <% if(side==="widgetsleft"){%>
+             <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %> 
+           <%}%>
+           <% if(side==="widgetsright"){%>
+             <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].data[y].data %> 
+             <%}%>
+             <% if(side==="widgetsmiddle"){%>
+               <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].data[y].data %> 
+               <%}%>
+             </div>
+           <% if(pageData.editmode) { %>
+      
+               <div class="btn-group">
+
+                  <button class="btn btn-danger btn-sm" type="button">
+                   Manage Widget
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+              <div class="dropdown-menu">
+                   <button type="button" class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>Modal<%-x%>" data-whatever="@mdo">Edit widget data</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>StyleModal" data-whatever="@mdo">Edit Widget Style</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DeleteWidgetModal<%-x%>" data-whatever="@mdo">Delete widget</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>PromoteWidgetModal<%-x%>" data-whatever="@mdo">Promote widget</button>
+                   <div class="dropdown-divider"></div>
+                   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- tabwidget %>DemoteWidgetModal<%-x%>" data-whatever="@mdo">Demote widget</button>
+
+                  
+              </div></div>
+               <% } %> 
+   </div>
+
+   <div class="modal fade" id="<%- tabwidget %>Modal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Widget Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div class="custom_model" >
+                  <form id="target"  method="POST">
+                    <textarea id="<%-tabwidget%>" name="editordata">
+                      <% if(side==="widgetsleft"){%>
+                        <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].data[y].data %>  
+                      <%}%>
+                      <% if(side==="widgetsright"){%>
+                        <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].data %> 
+                        <%}%>
+                        <% if(side==="widgetsmiddle"){%>
+                          <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].data %> 
+                          <%}%>
+                    </textarea>
+                    <input type="hidden" name="area"   value="sections"/>
+                    <input type="hidden" name="category" value="widgets"/> 
+                    <input type="hidden" name="section" value="<%-section%>"/>  
+                    <input type="hidden" name="side" value="<%-side%>"/> 
+                    <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                    <input type="hidden" name="tabs" value="<%-x%>"/> 
+                    <input type="hidden" name="dt" value="<%-y%>"/> 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn">Save Data</button>
+                      </div>
+                  </form>		
+              </div>
+               </div>
+  
+            
+            
+            
+              </div>
+           
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="<%- tabwidget %>DeleteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                  <form method="POST"  >
+
+                      <input type="hidden" name="action"   value="delete tab widget"/>
+                      <input type="hidden" name="area"   value="sections"/>
+                      <input type="hidden" name="category" value="widgets"/> 
+                      <input type="hidden" name="section" value="<%-section%>"/>  
+                      <input type="hidden" name="side" value="<%-side%>"/> 
+                      <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/>
+                      <input type="hidden" name="tabs" value="<%-x%>"/> 
+                      <input type="hidden" name="dt" value="<%-(y)%>"/> 
+                      <label>Are you sure you want to delete widget?</label>
+                    
+                      <div class="modal-footer">
+                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                        <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                    
+                      </div>
+                    </form>
+              </div>
+               </div>
+           
+            
+              </div>
+          
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="modal fade" id="<%- tabwidget %>DemoteWidgetModal<%-x%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Demotion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row" style="height:100px;">
+                <div class="col-lg-12">
+               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                  <form method="POST"  >
+
+                      <input type="hidden" name="actiontab"   value="demote tab widget"/>
+                      <input type="hidden" name="areatab"   value="sections"/>
+                      <input type="hidden" name="categorytab" value="widgets"/> 
+                      <input type="hidden" name="sectiontab" value="<%-section%>"/>  
+                      <input type="hidden" name="sidetab" value="<%-side%>"/> 
+                      <input type="hidden" name="widgetindextab" value="<%-widgetindex%>"/>
+                      <input type="hidden" name="tabstab" value="<%-x%>"/> 
+                      <input type="hidden" name="dttab" value="<%-(y)%>"/> 
+                      <label>Are you sure you want to demote widget?</label>
+                    
+                      <div class="modal-footer">
+                          <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                        <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                    
+                      </div>
+                    </form>
+              </div>
+               </div>
+           
+            
+              </div>
+          
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+   
+
+
+    <%}%>
+    <%}%>
+    <%}%>
+    <%}%>
+    <%}%>
+
+ 
+
+   
+          
+           
+                  
+
+         
+                
+         <%}%>
+        </div>
+         
+      </div>
+        </div>
+      
+      
+        <%}%>
+
+
+
+  
+  </div>
+
+<!--------------------modals-------------------->
+
+
+
+  <div class="modal fade" id="<%- widget %>SectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Section</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:100px;">
+              <div class="col-lg-4">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="area"   value="body"/>
+                    <input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>
+                    <input type="hidden" name="section"   value="<%- section %>"/>
+                    <input type="hidden" name="action"   value="change section"/>
+                    <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 1</button>
+                   
+                  </form>
+            </div>
+             </div>
+              <div class="col-lg-4">
+                 <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                 <form method="POST"  >
+                   <input type="hidden" name="category"   value="sections"/>
+                   <input type="hidden" name="area"   value="body"/>
+                    <input type="hidden" name="component"  value="/views/components/sections/section2.ejs"/>
+                    <input type="hidden" name="section"   value="<%- section %>"/>
+                    <input type="hidden" name="action"   value="change section"/>
+                    <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 2</button>
+                  
+                 </form>
+              </div>
+             </div>
+              <div class="col-lg-4">
+               <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+                   <form method="POST"  >
+                       <input type="hidden" name="category"   value="sections"/>
+                       <input type="hidden" name="area"   value="body"/>
+                       <input type="hidden" name="component"  value="/views/components/sections/section3.ejs"/>
+                       <input type="hidden" name="section"   value="<%- section %>"/>
+                       <input type="hidden" name="action"   value="change section"/>
+                       <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 3</button>
+                      
+                     </form>
+              </div>
+             </div>
+            </div>
+            <div class="row" style="height:100px;">
+             <div class="col-lg-4">
+            <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+             <form method="POST"  >
+               <input type="hidden" name="category"   value="sections"/>
+               <input type="hidden" name="area"   value="body"/>
+               <input type="hidden" name="component"  value="/views/components/sections/section4.ejs"/>
+               <input type="hidden" name="section"   value="<%- section %>"/>
+               <input type="hidden" name="action"   value="change section"/>
+               <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Section 4</button>
+              
+             </form>
+           </div>
+            </div>
+             <div class="col-lg-4">
+              <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+            </div>
+             <div class="col-lg-4">
+              <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+            </div>
+           </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="<%- widget %>DeleteSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirm Section Deletion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:100px;">
+              <div class="col-lg-12">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="area"   value="body"/>
+                   <!--<input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>--> 
+                    <input type="hidden" name="section"   value="<%- section %>"/>
+                    <input type="hidden" name="action"   value="delete section"/>
+                    <label>Are you sure you want to delete section?</label>
+                  
+                    <div class="modal-footer">
+                        <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                      <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                  
+                    </div>
+                  </form>
+            </div>
+             </div>
+         
+          
+            </div>
+        
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+  
+
+  <%}%>

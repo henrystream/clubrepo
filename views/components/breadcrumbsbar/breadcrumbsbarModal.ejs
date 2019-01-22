@@ -1,0 +1,124 @@
+<%- include(pageComponents.breadcrumbsbarFile) %>
+
+<!--Area for changing the component-->
+
+<% if(pageData.editmode) { %>
+ <button type="button" style="font-size: 10px !important;background-color: red;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#breadcrumbsbarModal" data-whatever="@mdo">Add Breadcrumbs bar</button>
+ <button type="button" style="font-size: 10px !important;background-color:royalblue;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#breadcrumbsbarDataModal" data-whatever="@mdo">Add Breadcrumbs bar data</button>
+ <% } %>    
+
+
+     
+
+ <div class="modal fade" id="breadcrumbsbarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Add Breadcrumbs bar</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         <div class="container">
+           <div class="row" style="height:100px;">
+             <div class="col-lg-4">
+            <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+               <form method="POST"  >
+                   <input type="hidden" name="category"   value="breadcrumbsbar"/>
+                   <input type="hidden" name="component"  value="breadcrumbsbar1.ejs"/>
+                   <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Breadcrumbs bar 1</button>
+                  
+                 </form>
+           </div>
+            </div>
+             <div class="col-lg-4">
+              <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;">
+                <form method="POST"  >
+                  <label>background-color:</label>
+                  <input type="hidden" name="category"   value="breadcrumbsbar"/>
+                  <input type="hidden" name="component"  value="breadcrumbsbar2.ejs"/>
+                  <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Breadcrumbs bar 2</button>
+                 
+                </form>
+             </div>
+            </div>
+             <div class="col-lg-4">
+              <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey">
+              
+             </div>
+            </div>
+           </div>
+           <div class="row" style="height:100px;">
+            <div class="col-lg-4">
+           <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+           </div>
+            <div class="col-lg-4">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+           </div>
+            <div class="col-lg-4">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: darkslategrey"></div>
+           </div>
+          </div>
+         </div>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Save</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+
+ <div class="modal fade" id="breadcrumbsbarDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Breadcrumbs bar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row" style="height:100px;">
+            <div class="col-lg-12">
+           <div class="custom_model" >
+            <form id="target" action="/upload" method="POST">
+              <textarea name="txteditar" id="txtEditor"></textarea>
+              <input type="hidden"  name="editordata" id="editordata"/>
+              <label for="blinks">Breadcrumb links</label>
+              <input type="text" id="blinks" name="links" placeholder="link1,link2,link3..."/>
+              <button type="submit" class="btn">Save Text</button>	
+            </form>	
+          </div>
+           </div>
+        
+        
+          </div>
+       
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/text-editor/editor.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#txtEditor").Editor();
+    $("#target").submit(function(){
+      $('#editordata').val($(".Editor-editor").html());
+      $("#target").submit();
+    });
+    
+
+  
+  });
+</script> 
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  -->
+    <script src="/assets/jquery.min.js"></script>
+    <link href="/assets/text-editor/summernote-lite.css" rel="stylesheet">
+    <script src="/assets/text-editor/summernote-lite.js"></script>
+    <link rel="stylesheet" href="/assets/styles.css"/>	
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" /> 
+   
+</head>
+<body>
+  <div class="container">
+      <div class="row" style="height: 100px;"></div>
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+          <form action="/login" method="post" class="border rounded" style="padding:20px;">
+              <div class="form-group">
+                <label for="exampleDropdownFormEmail2">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+              </div>
+              <div class="form-group">
+                <label for="exampleDropdownFormPassword2">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                <label class="form-check-label" for="dropdownCheck2">
+                  Remember me
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  
+  </div>
+</body>
+</html>

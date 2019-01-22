@@ -1,0 +1,175 @@
+<% var path=pageComponents.root_path+pageComponents.layoutcomponents[0].pageComponents.header.components.nav.type %>
+<%- include(path) %> 
+
+
+<!--Area for changing the component-->
+
+<% if(wdate!=undefined) { %>
+ 
+ 
+ <div class="btn-group">
+    <button class="btn btn-dark btn-sm" type="button">
+     Manage Nav
+    </button>
+    <button type="button" class="btn btn-sm btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+<div class="dropdown-menu">
+    <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#navModal" data-whatever="@mdo">Change Nav bar</button>
+    <div class="dropdown-divider"></div>
+    <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#navDataModal" data-whatever="@mdo">Edit Nav bar data</button>
+    <div class="dropdown-divider"></div>
+    <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- widget %>DeleteWidgetModal" data-whatever="@mdo">Delete Nav widget</button>
+</div></div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+     
+
+ <div class="modal fade" id="navModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Change nav bar</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         <div class="container">
+           <div class="row" style="height:100px;">
+             <div class="col-lg-4">
+            <div style="width:150px;height:150px;margin:auto;">
+               <form method="POST"  >
+                   <input type="hidden" name="category"   value="nav"/>
+                   <input type="hidden" name="area"   value="header"/>
+                   <input type="hidden" name="component"  value="/views/components/nav/nav1.ejs"/>
+                   <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin:auto;width:150px;height:150px;" class="btn btn-default navbar-btn rounded">nav bar 1</button>
+                  
+                 </form>
+           </div>
+            </div>
+            <div class="col-lg-4">
+                <div style="width:150px;height:150px;margin:auto;">
+                   <form method="POST"  >
+                       <input type="hidden" name="category"   value="nav"/>
+                       <input type="hidden" name="area"   value="header"/>
+                       <input type="hidden" name="component"  value="/views/components/nav/nav2.ejs"/>
+                       <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;width:150px;height:150px;margin:auto;" class="btn btn-default navbar-btn rounded">nav bar 2</button>
+                      
+                     </form>
+               </div>
+                </div>
+             <div class="col-lg-4">
+              <div style="width:150px;height:150px;margin:auto;">
+                  <form method="POST"  >
+                      <input type="hidden" name="category"   value="nav"/>
+                      <input type="hidden" name="area"   value="header"/>
+                      <input type="hidden" name="component"  value="/views/components/nav/nav3.ejs"/>
+                      <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;width:150px;height:150px;margin:auto;" class="btn btn-default navbar-btn">nav bar 3</button>
+                     
+                    </form>
+             </div>
+            </div>
+           </div>
+        
+         </div>
+       </div>
+    
+     </div>
+   </div>
+ </div>
+
+
+
+ <div class="modal fade" id="navDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add nav bar data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row" style="height:100px;">
+            <div class="col-lg-12">
+           <div class="custom_model" >
+            <form id="target"  method="POST">
+              <textarea id="summernote" name="editordata"><%- pageComponents.layoutcomponents[0].pageComponents.header.components.nav.data %></textarea>
+              <input type="hidden" name="category" value="nav"/>
+              <input type="hidden" name="area" value="header"/>
+              <input type="hidden" name="data" value="data"/>
+              
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn">Save Text</button>
+                </div>
+            </form>	
+          </div>
+           </div>
+        
+        
+          </div>
+       
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="<%- widget %>DeleteWidgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Widget Deletion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row" style="height:100px;">
+            <div class="col-lg-12">
+           <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+              <form method="POST"  >
+                  <input type="hidden" name="action"   value="delete widget"/>
+                  <input type="hidden" name="area"   value="sections"/>
+                  <input type="hidden" name="category" value="widgets"/> 
+                  <input type="hidden" name="section" value="<%-section%>"/>  
+                  <input type="hidden" name="side" value="<%-side%>"/> 
+                  <input type="hidden" name="widgetindex" value="<%-widgetindex%>"/> 
+                  <label>Are you sure you want to delete widget?</label>
+                
+                  <div class="modal-footer">
+                      <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                    <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                
+                  </div>
+                </form>
+          </div>
+           </div>
+       
+        
+          </div>
+      
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<% } %>    

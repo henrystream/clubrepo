@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><%- pageComponents.layoutcomponents[0].pageComponents.header.components.nav.data %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02<%- component%>" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02<%- component%>">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <% var x=0; %>
+        <% pageList.forEach((link)=>{%>
+        
+      <li class="nav-item active">
+          <% if(wdate!=undefined) { %>
+            <a class="nav-link" style="text-transform: uppercase !important;"  href="/<%= link %>"><span class="sr-only">(current)</span><%- link %></a>
+            <%}else{%>
+              <% var link1=link+"client" %>
+              <a class="nav-link" style="text-transform: uppercase !important;" href="/<%= link1 %>"><span class="sr-only">(current)</span><%- link %></a>
+              <%}%>
+      </li>
+      <% x++; %>
+      <%});%>
+    </ul>
+    <% if(wdate===undefined) { %>
+      <form method="POST" class="form-inline my-2 my-lg-0">
+        <p style="padding:15px;" align="right">  
+         <% var dt=new Date();%> 
+         <% var cdt=dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate();%>    
+       <span style="color:white;">Date:</span>                  
+           <input id="tstart" name="ndate" value="<%-clientdate%>"  min="2018-01-01" max="<%-cdt%>" type="date"> 
+           <button class="btn btn-outline-success my-2 my-sm-0" style="margin-top:-5px;" type="submit">Go</button>      
+          </p>
+      
+        </form> 
+        <%}%>
+  </div>
+</nav>

@@ -1,0 +1,531 @@
+
+
+<div class="row">
+  <div class="col-lg-6" style="min-height:50px; padding:10px;background-color:#fff;">
+    <% if((pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsleft)!=undefined){%>
+    <%if((pageComponents.layoutcomponents[1].pageComponents.sections.components[component].order)!=undefined && (pageComponents.layoutcomponents[1].pageComponents.sections.components[component].order)==='desc' ){%>
+    <% for(var x=(pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsleft.length)-1;x>-1;x--){%>
+      <% if(pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsleft[x].type!=undefined){%>
+      <% var w1path=pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsleft[x].type %>
+      <% var widget="widgetleft"+component+x %>
+      <% var section=component %>
+      <%- include(w1path,{widget:widget,section:section,widgetindex:x,side:'widgetsleft'}) %> 
+      <%}%>
+      <%}}else{%>
+        <% for(var x=0;x<(pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsleft.length);x++){%>
+          <%if(pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsleft[x].type!=undefined){%>
+          <% var w1path=pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsleft[x].type %>
+          <% var widget="widgetleft"+component+x %> 
+          <% var section=component %>
+          <%- include(w1path,{widget:widget,section:section,widgetindex:x,side:'widgetsleft'}) %>
+          <%}%> 
+          <%}}%>
+        <%}%>
+      <% if(wdate!=undefined) { %>
+     <div class="btn-group">
+      <button class="btn btn-info btn-sm" type="button">
+       Manage Section Area
+      </button>
+      <button type="button" class="btn btn-sm btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+ <div class="dropdown-menu">
+   <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#widgetsModal<%- component %>1" data-whatever="@mdo">Add Widget</button>
+   <div class="dropdown-divider"></div>
+   <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#sectionstyleModal1" data-whatever="@mdo">Edit Section Style</button>
+   <div class="dropdown-divider"></div>
+   <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#SectionModalChange<%-component%>1" data-whatever="@mdo">Change Section </button>
+   <div class="dropdown-divider"></div>
+   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- component %>DeleteSectionModal" data-whatever="@mdo">Delete Section</button>
+   <div class="dropdown-divider"></div>
+   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- component %>SectionOrderModal" data-whatever="@mdo">Change Section Order</button>
+  </div>
+</div>
+<div class="modal fade" id="widgetsModal<%- component %>1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Widget to Left Section Area</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row" style="height:100px;">
+            <div class="col-lg-3">
+           <div style="width:150px;height:150px;margin:auto;">
+              <form method="POST"  >
+                  <input type="hidden" name="category"   value="sections"/>
+                  <input type="hidden" name="section"   value="<%- component %>"/>
+                  <input type="hidden" name="area"   value="1"/>
+                  <input type="hidden" name="component"  value="/views/components/widgets/textwidget.ejs"/>
+                  <button type="submit" style="font-size: 12px !important;width:150px;height:150px;background-color:crimson;color:#fff;margin:auto;" class="btn btn-default navbar-btn">Text widget</button>
+                 
+                </form>
+          </div>
+           </div>
+            <div class="col-lg-3">
+               <div style="width:150px;height:150px;margin:auto;">
+               <form method="POST"  >
+                <input type="hidden" name="category"   value="sections"/>
+                <input type="hidden" name="section"   value="<%- component %>"/>
+                <input type="hidden" name="area"   value="1"/>
+                <input type="hidden" name="component"  value="/views/components/nav/navModal.ejs"/>
+                <button type="submit" style="font-size: 12px !important;width:150px;height:150px;margin:auto;background-color:crimson;color:#fff;" class="btn btn-default navbar-btn">Nav widget</button>
+               
+               </form>
+            </div>
+           </div>
+            <div class="col-lg-3">
+             <div style="width:150px;height: 150px;margin:auto;">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="section"   value="<%- component %>"/>
+                    <input type="hidden" name="area"   value="1"/>
+                    <input type="hidden" name="component"  value="/views/components/widgets/carousel.ejs"/>
+                    <button type="submit" style="font-size: 12px !important;height:150px;width:150px;background-color:crimson;color:#fff;margin:auto;" class="btn btn-default navbar-btn">Carousel widget</button>
+                   
+                   </form>
+            </div>
+           </div>
+           <div class="col-lg-3">
+            <div style="width:150px;height:150px;margin:auto;">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="section"   value="<%- component %>"/>
+                    <input type="hidden" name="area"   value="1"/>
+                    <input type="hidden" name="component"  value="/views/components/widgets/tab.ejs"/>
+                    <button type="submit" style="font-size: 12px !important;width:150px;height:150px;background-color:crimson;color:#fff;margin:auto;" class="btn btn-default navbar-btn">Tab widget</button>
+                   
+                   </form>
+           </div>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+  <!--     <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<%}%>
+  </div>
+  <div class="col-lg-6" style="min-height:50px; padding:10px;background-color:#fff;">
+
+      <% if((pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsright)!=undefined){%>
+        <%if((pageComponents.layoutcomponents[1].pageComponents.sections.components[component].order)!=undefined && (pageComponents.layoutcomponents[1].pageComponents.sections.components[component].order)==='desc' ){%>
+        <% for(var x=(pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsright.length)-1;x>-1;x--){%>
+          <%if(pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsright[x].type!=undefined){%>
+          <% var w1path=pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsright[x].type %>
+          <% var widget="widgetright"+component+x %> 
+          <% var section=component %>
+          <%- include(w1path,{widget:widget,section:section,widgetindex:x,side:'widgetsright'}) %>
+          <%}%> 
+          <%}}else{%>
+            <% for(var x=0;x<(pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsright.length);x++){%>
+              <%if(pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsright[x].type!=undefined){%>
+              <% var w1path=pageComponents.root_path+pageComponents.layoutcomponents[1].pageComponents.sections.components[component].widgetsright[x].type %>
+              <% var widget="widgetright"+component+x %> 
+              <% var section=component %>
+              <%- include(w1path,{widget:widget,section:section,widgetindex:x,side:'widgetsright'}) %>
+              <%}%> 
+              <%}}%>
+            <%}%>
+          <% if(wdate!=undefined) { %>
+    <div class="btn-group">
+      <button class="btn btn-info btn-sm" type="button">
+       Manage Section Area
+      </button>
+      <button type="button" class="btn btn-sm btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+ <div class="dropdown-menu">
+   <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#widgetsModal<%- component %>2" data-whatever="@mdo">Add Widget</button>
+   <div class="dropdown-divider"></div>
+   <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#sectionstyleModal11" data-whatever="@mdo">Edit Section Style</button>
+   <div class="dropdown-divider"></div>
+   <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#SectionModalChange<%- component %>2" data-whatever="@mdo">Change Section </button>
+   <div class="dropdown-divider"></div>
+   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- component %>DeleteSectionModal" data-whatever="@mdo">Delete Section</button>
+   <div class="dropdown-divider"></div>
+   <button type="button"  class="dropdown-item" data-toggle="modal" data-target="#<%- component %>SectionOrderModal" data-whatever="@mdo">Change Section Order</button>
+  </div>
+</div>
+<div class="modal fade" id="widgetsModal<%- component %>2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Widget to Right Section Area</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row" style="height:100px;">
+            <div class="col-lg-3">
+           <div style="width:150px;height:150px;margin:auto;">
+              <form method="POST"  >
+                  <input type="hidden" name="category"   value="sections"/>
+                  <input type="hidden" name="section"   value="<%- component %>"/>
+                  <input type="hidden" name="area"   value="2"/>
+                  <input type="hidden" name="component"  value="/views/components/widgets/textwidget.ejs"/>
+                  <button type="submit" style="font-size: 12px !important;height:150px;width:150px;background-color:crimson;color:#fff;margin:auto;" class="btn btn-default navbar-btn">Text Widget</button>
+                 
+                </form>
+          </div>
+           </div>
+            <div class="col-lg-3">
+               <div style="width:150px;height: 150px;margin:auto;">
+               <form method="POST"  >
+                <input type="hidden" name="category"   value="sections"/>
+                <input type="hidden" name="section"   value="<%- component %>"/>
+                <input type="hidden" name="area"   value="2"/>
+                <input type="hidden" name="component"  value="/views/components/nav/navModal.ejs"/>
+                <button type="submit" style="font-size: 12px !important;width:150px;height:150px;background-color:crimson;color:#fff;margin:auto;" class="btn btn-default navbar-btn">Nav Widget</button>
+               
+               </form>
+            </div>
+           </div>
+            <div class="col-lg-3">
+             <div style="width:150px;height: 150px;margin:auto;">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="section"   value="<%- component %>"/>
+                    <input type="hidden" name="area"   value="2"/>
+                    <input type="hidden" name="component"  value="/views/components/widgets/carousel.ejs"/>
+                    <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;width:150px;height:150px;" class="btn btn-default navbar-btn">Carousel Widget</button>
+                   
+                   </form>
+            </div>
+           </div>
+           <div class="col-lg-3">
+           <div style="width:150px;height:150px;margin:auto;">
+            <form method="POST"  >
+                <input type="hidden" name="category"   value="sections"/>
+                <input type="hidden" name="section"   value="<%- component %>"/>
+                <input type="hidden" name="area"   value="2"/>
+                <input type="hidden" name="component"  value="/views/components/widgets/tab.ejs"/>
+                <button type="submit" style="font-size: 12px !important;height:150px;width:150px;background-color:crimson;color:#fff;margin:auto;" class="btn btn-default navbar-btn">Tab Widget</button>
+               
+               </form>
+       </div>
+          </div>
+       
+        </div>
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+</div>
+<%}%>
+  </div>
+</div>
+
+
+<!-- --------------------------------Modals---------------------------------  -->
+
+
+<% if(wdate!=undefined) { %>
+
+  <div class="modal fade" id="SectionModalChange<%- component %>1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Section Layout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:100px;">
+              <div class="col-lg-3">
+             <div style="width:150px;height:150px;margin:auto;">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="area"   value="body"/>
+                    <input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>
+                    <input type="hidden" name="section"   value="<%-component%>"/>
+                    <input type="hidden" name="action"   value="change section"/>
+                    <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                      2 Equal
+                      <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                        <div class="col-lg-6" style="background-color: orangered"></div>
+                        <div class="col-lg-6" style="background-color: orange"></div>
+                      </div> 
+                    </button>
+                   
+                  </form>
+            </div>
+             </div>
+              <div class="col-lg-3">
+                 <div style="width:150px;height:150px;margin:auto;">
+                 <form method="POST"  >
+                   <input type="hidden" name="category"   value="sections"/>
+                   <input type="hidden" name="area"   value="body"/>
+                    <input type="hidden" name="component"  value="/views/components/sections/section2.ejs"/>
+                    <input type="hidden" name="section"   value="<%-component%>"/>
+                    <input type="hidden" name="action"   value="change section"/>
+                    <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                      2 (8:4)
+                      <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                        <div class="col-lg-8" style="background-color: orangered"></div>
+                        <div class="col-lg-4" style="background-color: orange"></div>
+                      </div> 
+                    </button>
+                 </form>
+              </div>
+             </div>
+              <div class="col-lg-3">
+               <div style="width:150px;height:150px;margin:auto;">
+                   <form method="POST"  >
+                       <input type="hidden" name="category"   value="sections"/>
+                       <input type="hidden" name="area"   value="body"/>
+                       <input type="hidden" name="component"  value="/views/components/sections/section3.ejs"/>
+                       <input type="hidden" name="section"   value="<%-component%>"/>
+                       <input type="hidden" name="action"   value="change section"/>
+                       <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                        3 split
+                        <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                          <div  style="background-color: orangered;width:20px;"></div>
+                          <div  style="background-color: orange;width:50px;"></div>
+                          <div  style="background-color: orangered;width:20px;"></div>
+                        </div> 
+                      </button>
+                     </form>
+              </div>
+             </div>
+             <div class="col-lg-3">
+              <div style="width:150px;height:150px;margin:auto;">
+               <form method="POST"  >
+                 <input type="hidden" name="category"   value="sections"/>
+                 <input type="hidden" name="area"   value="body"/>
+                 <input type="hidden" name="component"  value="/views/components/sections/section4.ejs"/>
+                 <input type="hidden" name="section"   value="<%-component%>"/>
+                 <input type="hidden" name="action"   value="change section"/>
+                 <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                  1 Full Row
+                   <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                    
+                     <div class="col-lg-12" style="background-color: orange"></div>
+                   
+                   </div> 
+                 </button>
+               </form>
+             </div>
+              </div>
+            </div>
+       
+          </div>
+        </div>
+      <!--   <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="SectionModalChange<%- component %>2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Section Layout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:100px;">
+              <div class="col-lg-3">
+             <div style="width:150px;height:150px;margin:auto;">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="area"   value="body"/>
+                    <input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>
+                    <input type="hidden" name="section"   value="<%-component%>"/>
+                    <input type="hidden" name="action"   value="change section"/>
+                    <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                      2 Equal
+                      <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                        <div class="col-lg-6" style="background-color: orangered"></div>
+                        <div class="col-lg-6" style="background-color: orange"></div>
+                      </div> 
+                    </button>
+                  </form>
+            </div>
+             </div>
+              <div class="col-lg-3">
+                 <div style="width:150px;height:150px;margin:auto;">
+                 <form method="POST"  >
+                   <input type="hidden" name="category"   value="sections"/>
+                   <input type="hidden" name="area"   value="body"/>
+                    <input type="hidden" name="component"  value="/views/components/sections/section2.ejs"/>
+                    <input type="hidden" name="section"   value="<%-component%>"/>
+                    <input type="hidden" name="action"   value="change section"/>
+                    <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                      2 (8:4)
+                      <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                        <div class="col-lg-8" style="background-color: orangered"></div>
+                        <div class="col-lg-4" style="background-color: orange"></div>
+                      </div> 
+                    </button>
+                 </form>
+              </div>
+             </div>
+              <div class="col-lg-3">
+               <div style="width:150px;height:150px;margin:auto;">
+                   <form method="POST"  >
+                       <input type="hidden" name="category"   value="sections"/>
+                       <input type="hidden" name="area"   value="body"/>
+                       <input type="hidden" name="component"  value="/views/components/sections/section3.ejs"/>
+                       <input type="hidden" name="section"   value="<%-component%>"/>
+                       <input type="hidden" name="action"   value="change section"/>
+                       <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                        3 split
+                        <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                          <div  style="background-color: orangered;width:20px;"></div>
+                          <div  style="background-color: orange;width:50px;"></div>
+                          <div  style="background-color: orangered;width:20px;"></div>
+                        </div> 
+                      </button>
+                     </form>
+              </div>
+             </div>
+             <div class="col-lg-3">
+              <div style="width:150px;height:150px;margin:auto;">
+               <form method="POST"  >
+                 <input type="hidden" name="category"   value="sections"/>
+                 <input type="hidden" name="area"   value="body"/>
+                 <input type="hidden" name="component"  value="/views/components/sections/section4.ejs"/>
+                 <input type="hidden" name="section"   value="<%-component%>"/>
+                 <input type="hidden" name="action"   value="change section"/>
+                 <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;height:150px;width:150px;" class="btn btn-default navbar-btn">
+                  1 Full Row
+                   <div class="row" style="height:50px;border-radius:10px;width:100px;margin:auto;">
+                    
+                     <div class="col-lg-12" style="background-color: orange"></div>
+                   
+                   </div> 
+                 </button>
+               </form>
+             </div>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+     
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="<%- component %>DeleteSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirm Section Deletion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:100px;">
+              <div class="col-lg-12">
+             <div style="width:90%;height: 90%;margin-top:5px;margin-left:5px;background-color: #fff">
+                <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="area"   value="body"/>
+                   <!--<input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>--> 
+                    <input type="hidden" name="section"   value="<%- component %>"/>
+                    <input type="hidden" name="action"   value="delete section"/>
+                    <label>Are you sure you want to delete section?</label>
+                  
+                    <div class="modal-footer">
+                        <button type="submit" style="font-size: 10px !important;background-color:crimson;color:#fff;margin-top:-10px;" class="btn btn-default navbar-btn">Yes</button>
+                      <button type="button" style="font-size: 10px !important;margin-top:-10px;" class="btn btn-default navbar-btn" data-dismiss="modal">Close</button>
+                  
+                    </div>
+                  </form>
+            </div>
+             </div>
+         
+          
+            </div>
+        
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="<%- component %>SectionOrderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Section Widgets Order</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row" style="height:100px;">
+              <div class="col-lg-3"></div>
+              <div class="col-lg-3">
+             <div style="width:150px;height:150px;margin:auto;">
+              <form method="POST"  >
+                <input type="hidden" name="category"   value="sections"/>
+                <input type="hidden" name="area"   value="body"/>
+               <!--<input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>--> 
+                <input type="hidden" name="section"   value="<%- component %>"/>
+                <input type="hidden" name="action"   value="order"/>
+                <input type="hidden" name="order"   value="asc"/>
+                    <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;width:150px;height:150px;" class="btn btn-default navbar-btn">ASCENDING</button>
+              </form>
+            </div>
+             </div>
+              <div class="col-lg-3">
+                 <div style="width:150px;height:150px;margin:auto;">
+                  <form method="POST"  >
+                    <input type="hidden" name="category"   value="sections"/>
+                    <input type="hidden" name="area"   value="body"/>
+                   <!--<input type="hidden" name="component"  value="/views/components/sections/section1.ejs"/>--> 
+                    <input type="hidden" name="section"   value="<%- component %>"/>
+                    <input type="hidden" name="action"   value="order"/>
+                    <input type="hidden" name="order"   value="desc"/>
+                  
+                  
+                    
+                        <button type="submit" style="font-size: 12px !important;background-color:crimson;color:#fff;margin:auto;width:150px;height:150px" class="btn btn-default navbar-btn">DESCENDING</button>
+                  </form>
+              </div>
+             </div>
+             <div class="col-lg-3"></div>
+          
+            </div>
+        
+          </div>
+        </div>
+        <!--<div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>-->
+      </div>
+    </div>
+  </div>
+<%}%>

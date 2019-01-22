@@ -1,0 +1,98 @@
+<style>
+.nav-item {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #DB2723;
+  cursor: pointer;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.active, .nav-item:hover {
+  background-color: #000;
+  color: white;
+}
+</style>
+<nav class="navbar navbar-expand-lg btn-danger navbar-dark  btn-danger" style="
+background-blend-mode:color-burn;
+background-color:#DB2723 !important;
+background-position:bottom;height:55px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01<%- component%>" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01<%- component%>">
+      <a class="navbar-brand" href="#"><%- pageComponents.layoutcomponents[0].pageComponents.header.components.nav.data %></a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <% var x=0; %>
+          <% pageList.forEach((link)=>{%>         
+          <%pname=pname.replace('/','');%>
+            <%if(link===pname){%>
+        <li class="nav-item active">
+          <%}else{%>
+            <li class="nav-item">
+            <%}%>
+            <% if(wdate!=undefined) { %>
+           
+           <%if(link==='Teams'){%>
+            <li class="dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="text-transform: uppercase;color:#fff;">
+              <%-link %> <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" style="background-color:lightgreen;">
+              <% teams.forEach((team)=>{%>
+              <li class="dropdown-item"><a href="/<%-team%>" style="color:#000"><%- team %></a>
+                <div class="dropdown-divider"></div>
+              </li>
+             
+              <%})%>
+              </ul>
+              </li>
+            <%}else{%>
+              <a class="nav-link" style="text-transform: uppercase;color:#fff;" href="/<%= link %>"><span class="sr-only">(current)</span><%- link.replace('_',' ') %></a>
+              <%}%>
+            <%}else{%>
+              <% var link1=link+"client" %>
+              <%if(link==='Teams'){%>
+                <li class="dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" style="text-transform: uppercase;color:#fff;">
+                  <%-link %> <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" style="background-color:lightgreen;">
+                  <% teams.forEach((team)=>{%>
+                    <% var team1=team+"client" %>
+                  <li class="dropdown-item"><a href="/<%-team1%>" style="color:#000"><%- team %></a>
+                 <!--   <div class="dropdown-divider"></div>-->
+                  </li>
+                
+                  <%})%>
+                  </ul>
+                  </li>
+                <%}else{%>
+              <a class="nav-link" style="text-transform: uppercase;color:#fff;"  href="/<%= link1 %>"><span class="sr-only">(current)</span><%- link.replace('_',' ')  %></a>
+              <%}%>
+              <%}%>
+        </li>
+        <% x++; %>
+        <%});%>
+      </ul>
+      <% if(wdate===undefined) { %>
+ 
+      <%}%>
+    </div>
+  </nav>
+<script>
+  // Get the container element
+var btnContainer = document.getElementById("navbarTogglerDemo01<%- component%>");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("nav-item");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+} 
+</script>

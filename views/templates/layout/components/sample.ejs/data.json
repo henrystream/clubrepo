@@ -1,0 +1,115 @@
+{
+    "pageTitle": "New page2",
+    "editmode": true,
+    "breadcrumbsbar": {
+        "links": [
+            "home",
+            "about",
+            "contacts",
+            "test",
+            "AOB"
+        ],
+        "urls": [
+            "/index",
+            "/about",
+            "/contacts",
+            "/test",
+            "/aob"
+        ],
+        "style": {
+            "background": "background-color:lime;",
+            "color": "color:white;",
+            "fontfamily": "font-family:arial;",
+            "fontsize": "font-size:16px"
+        }
+    },
+    "breadcrumbsbar1": {
+        "links": [
+            "Vegetable",
+            "Friuts",
+            "Meat",
+            "Fish",
+            "Cereal"
+        ],
+        "urls": [
+            "/index",
+            "/about",
+            "/contacts",
+            "/test",
+            "/aob"
+        ],
+        "style": {
+            "background": "background-color:lime;",
+            "color": "color:white;",
+            "fontfamily": "font-family:arial;",
+            "fontsize": "font-size:16px"
+        }
+    },
+    "headers": {
+        "headerType": "header1.ejs",
+        "style": {
+            "color": "color:white;",
+            "fontfamily": "font-family:arial;",
+            "fontsize": "font-size:16px",
+            "background": "background-color:orange;"
+        }
+    },
+    "headers1": {
+        "headerType": "header1.ejs",
+        "style": {
+            "color": "color:white;",
+            "fontfamily": "font-family:arial;",
+            "fontsize": "font-size:16px",
+            "background": "background-color:orange;"
+        }
+    },
+    "nav": {
+        "links": [
+            "Vegetable",
+            "Friuts",
+            "Meat",
+            "Fish",
+            "Cereal"
+        ],
+        "urls": [
+            "/index",
+            "/about",
+            "/contacts",
+            "/test",
+            "/aob"
+        ],
+        "style": {
+            "background": "background-color:lime;",
+            "color": "color:white;",
+            "fontfamily": "font-family:arial;",
+            "fontsize": "font-size:16px"
+        },
+        "data":""
+
+    },
+    "hero": {
+        "links": [
+            "Vegetable",
+            "Friuts",
+            "Meat",
+            "Fish",
+            "Cereal"
+        ],
+        "urls": [
+            "/index",
+            "/about",
+            "/contacts",
+            "/test",
+            "/aob"
+        ],
+        "style": {
+            "background": "background-color:lime;",
+            "color": "color:white;",
+            "fontfamily": "font-family:arial;",
+            "fontsize": "font-size:16px"
+        },
+        "data":""
+
+    }
+   
+}
