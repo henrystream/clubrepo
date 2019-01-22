@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><%= pageComponents.pageTitle %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap-4.0.0-dist/css/bootstrap.css">
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  -->
 	<script src="/assets/jquery.min.js"></script>
-	
+
+
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/text-editor/summernote-lite.css" rel="stylesheet">
  
@@ -53,7 +54,8 @@ background-attachment: fixed;
 	
 </head>
 <body style="background-color:lavender">
-    <div class="container">
+   
+			<div class="container">
             
         <div class="row" class="1.1">
             <div class="col-lg-12" class="1.1.1"><%- include(pageComponents.root_path+pageComponents.layoutcomponents[0].modal) %>
@@ -73,6 +75,7 @@ background-attachment: fixed;
 <script src="/assets/popper1.min.js"></script>
 <script src="/assets/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 <script src="/assets/text-editor/summernote-lite.js"></script>
+
 <script>
 
 
@@ -194,7 +197,7 @@ $("#widgetmiddle<%-i%><%-p%>").summernote('destroy');
 
   </script> 
 
-
+</div>
 
  
 </body>
