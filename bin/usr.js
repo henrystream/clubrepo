@@ -281,7 +281,7 @@ function createRoutes(){
             var players=fdb1.getData('/players');
             console.log(pgs);
             res.render(`templates/${tmp}${name}`,{pageComponents:pageComponents,pageData:db.getData("/"),pageList:pgs,teams:teams,players:players,wdate:wdate,pname:name});
-        },100);//changed from 3000
+        },1000);//changed from 3000
                  
             
         });
