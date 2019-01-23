@@ -304,16 +304,16 @@ function buildPage(config,templateName,finalPageName){
   
 var stream = fs.createWriteStream(__dirname+config.pagename);
 
-
+stream.once('open', (fd) => {
+    stream.write('');
+    stream.end();
+    });
         var comp=0;
         var path='/views/templates/'+templateName+'/'+finalPageName+'_dir/';
         var path2='/views/templates/'+templateName+'/';
     
         var pbprom0=new Promise(()=>{
-            stream.once('open', (fd) => {
-                stream.write('');
-                stream.end();
-                });
+         
             
           //  fs.readFile(__dirname+'/views/templates/'+templateName+'/'+finalPageName+'_dir/1.ejs','utf8',(err,data)=>{
             fs.readFile(__dirname+'/views/extras/1.ejs','utf8',(err,data)=>{     
@@ -321,7 +321,7 @@ var stream = fs.createWriteStream(__dirname+config.pagename);
                     console.log(err);
                 });
                });
-               fs.close();
+          
            
         });
   

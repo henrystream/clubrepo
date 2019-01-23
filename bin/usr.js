@@ -222,9 +222,9 @@ function createRoutes(){
             var dsd = new JsonDB(root_path+'/sessions/'+req.sessionID, true, false);
           
             if(dsd.getData('/passport/wdate')!=undefined){
-                console.log('Wdate Defined');
-                dd=dsd.getData('/passport/wdate').split('-');
-                edt=dd[1]+'.'+(dd[2]*1)+'.'+dd[0];
+               // console.log('Wdate Defined');
+               // dd=dsd.getData('/passport/wdate').split('-');
+             //   edt=dd[1]+'.'+(dd[2]*1)+'.'+dd[0];
              //   cdt=edt;
                 cdt='data';
                 console.log('dd:'+cdt);
@@ -288,7 +288,14 @@ function createRoutes(){
          
             Promise.all([promise0,promise1]).
             then(console.log(`finished loading ${name}`)).
-            catch(err=>console.log(err));
+            catch((err)=>{
+                console.log(err);
+                console.log(req.sessionID);
+                var dd = new JsonDB(root_path+'/sessions/'+req.sessionID, true, false);
+                dd.delete("/passport");
+               // console.log(req.session.passport); 
+                res.redirect('/login');
+            });
       
       
         }).post((req,res)=>{
