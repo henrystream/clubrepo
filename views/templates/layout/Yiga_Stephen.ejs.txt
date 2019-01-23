@@ -1,0 +1,16 @@
+{
+"pagename":"/views/templates/layout/Yiga_Stephen.ejs",
+"title":"page",
+"layout":"layout",
+"layoutParts":3,
+"1.1":1,
+"1.2":1,
+"1.3":1,
+"1.1.1":1,
+"1.2.1":1,
+"1.3.1":1,
+"1.1.1.1":"components/Yiga_Stephen.ejs/1.1.1.1.ejs",
+"1.2.1.1":"components/Yiga_Stephen.ejs/1.2.1.1.ejs",
+"1.3.1.1":"components/Yiga_Stephen.ejs/1.3.1.1.ejs",
+"otherinfo":""
+}
