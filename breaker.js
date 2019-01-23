@@ -315,8 +315,9 @@ var stream = fs.createWriteStream(__dirname+config.pagename);
                 stream.end();
                 });
             
-            fs.readFile(__dirname+'/views/templates/'+templateName+'/'+finalPageName+'_dir/1.ejs','utf8',(err,data)=>{
-                fs.appendFile(__dirname+config.pagename,data,(err)=>{   
+          //  fs.readFile(__dirname+'/views/templates/'+templateName+'/'+finalPageName+'_dir/1.ejs','utf8',(err,data)=>{
+            fs.readFile(__dirname+'/views/extras/1.ejs','utf8',(err,data)=>{     
+            fs.appendFile(__dirname+config.pagename,data,(err)=>{   
                     console.log(err);
                 });
                });
