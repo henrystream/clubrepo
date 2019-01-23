@@ -4,13 +4,14 @@
 
 <script>
 
+"<%setTimeout(()=>{console.log('loaded..');},3000);%>"
+"<%var cprom0=new Promise(()=>{%>"
 
-    $('#summernote').summernote({
-      placeholder: 'logo data edit',
-      tabsize: 2,
-      height:300,
-      focus: true  
+  $('#summernote').summernote({
+    placeholder: 'logo data edit',tabsize: 2,height:300,focus: true
     });
+    "<% });Promise.all([cprom0]).then(console.log('loaded again..')).catch();%>"
+
     $('#summernote1').summernote({
       placeholder: 'Hero data Edit',
       tabsize: 2,
@@ -119,11 +120,11 @@ $("#widgetmiddle<%-i%><%-p%>").summernote('destroy');
 
   
       "<%}}%>"
-  
 
+     
   </script> 
 
-</div>
+
 
  
 </body>

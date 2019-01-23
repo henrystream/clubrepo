@@ -308,19 +308,22 @@ stream.once('open', (fd) => {
         stream.write('');
         stream.end();
         });
-
-    fs.readFile(__dirname+'/views/templates/'+templateName+'/'+finalPageName+'_dir/1.ejs','utf8',(err,data)=>{
-         fs.appendFile(__dirname+config.pagename,data,(err)=>{   
-             console.log(err);
-         });
+        var comp=0;
+        var path='/views/templates/'+templateName+'/'+finalPageName+'_dir/';
+        var path2='/views/templates/'+templateName+'/';
+    
+        var pbprom0=new Promise(()=>{
+            fs.readFile(__dirname+'/views/templates/'+templateName+'/'+finalPageName+'_dir/1.ejs','utf8',(err,data)=>{
+                fs.appendFile(__dirname+config.pagename,data,(err)=>{   
+                    console.log(err);
+                });
+               });
         });
+  
    
   
-    var comp=0;
-    var path='/views/templates/'+templateName+'/'+finalPageName+'_dir/';
-    var path2='/views/templates/'+templateName+'/';
-
-    for(var rws=1;rws<=config.layoutParts;rws++)
+     var pbprom1=new Promise(()=>{
+        for(var rws=1;rws<=config.layoutParts;rws++)
     {
         var n=path+"1."+rws;
         console.log(n);
@@ -375,13 +378,16 @@ stream.once('open', (fd) => {
        
      
        
-    }
-
+       }
+       });
+       var pbprom2=new Promise(()=>{
     fs.readFile(__dirname+path+'2.ejs','utf8',(err,data)=>{
         fs.appendFile(__dirname+config.pagename,data,(err)=>{
             console.log(err);
         })
     });
+});
+Promise.all([pbprom0,pbprom1,pbprom2]).then(console.log('Build successfull..')).catch();
 }
 
 
