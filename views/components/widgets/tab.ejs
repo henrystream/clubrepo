@@ -9,9 +9,9 @@
        
           <% for(var c=0;c<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs.length);c++){%>
           <%if(c===0){%>
-            <a class="nav-item nav-link active" style="color:#444;background-color:white;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>" aria-selected="true">
+            <a class="nav-item nav-link active" style="color:#444 !important;background-color:white !important;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>" aria-selected="true">
           <%}else{%>
-            <a class="nav-item nav-link" style="color:#444;background-color:white;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>" aria-selected="false">
+            <a class="nav-item nav-link" style="color:#444 !important;background-color:white !important;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>" aria-selected="false">
           <%}%>
            <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[c].title %>
            </a>
@@ -21,7 +21,7 @@
     </div>
   </nav>
  
-  <div class="tab-content" id="<%-widget%>nav-tabContent">
+  <div class="tab-content" id="<%-widget%>nav-tabContent" style="color:#000 !important;">
       <% for(var x=0;x<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs.length);x++){%>
         <%if(x===0){%>
         <div style="min-height:100px;background-color:transparent;" class="tab-pane fade show active" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>" role="tabpanel" aria-labelledby="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsleft[widgetindex].tabs[x].title %>-tab">
@@ -760,9 +760,9 @@
          
             <% for(var c=0;c<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs.length);c++){%>
             <%if(c===0){%>
-              <a class="nav-item nav-link active" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>" aria-selected="true">
+              <a class="nav-item nav-link active" style="color:#444 !important;background-color:white !important;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>" aria-selected="true">
             <%}else{%>
-              <a class="nav-item nav-link" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>" aria-selected="false">
+              <a class="nav-item nav-link" style="color:#444 !important;background-color:white !important;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>" aria-selected="false">
             <%}%>
              <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[c].title %>
              </a>
@@ -772,7 +772,7 @@
       </div>
     </nav>
    
-    <div class="tab-content" id="<%-widget%>nav-tabContent">
+    <div class="tab-content" id="<%-widget%>nav-tabContent" style="color:#000 !important;">
         <% for(var x=0;x<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs.length);x++){%>
           <%if(x===0){%>
           <div style="min-height:100px;background-color:transparent;" class="tab-pane fade show active" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].title %>" role="tabpanel" aria-labelledby="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsright[widgetindex].tabs[x].title %>-tab">
@@ -1510,9 +1510,9 @@
            
               <% for(var c=0;c<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs.length);c++){%>
               <%if(c===0){%>
-                <a class="nav-item nav-link active" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>" aria-selected="true">
+                <a class="nav-item nav-link active" style="color:#444 !important;background-color:white !important;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>" aria-selected="true">
               <%}else{%>
-                <a class="nav-item nav-link" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>" aria-selected="false">
+                <a class="nav-item nav-link" style="color:#444 !important;background-color:white !important;" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>-tab" data-toggle="tab" href="#nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title%>" role="tab" aria-controls="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>" aria-selected="false">
               <%}%>
                <%- pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[c].title %>
                </a>
@@ -1522,7 +1522,7 @@
         </div>
       </nav>
      
-      <div class="tab-content" id="<%-widget%>nav-tabContent">
+      <div class="tab-content" id="<%-widget%>nav-tabContent" style="color:#000 !important;">
           <% for(var x=0;x<(pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs.length);x++){%>
             <%if(x===0){%>
             <div style="min-height:100px;background-color:transparent;" class="tab-pane fade show active" id="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].title %>" role="tabpanel" aria-labelledby="nav-<%-pageComponents.layoutcomponents[1].pageComponents.sections.components[section].widgetsmiddle[widgetindex].tabs[x].title %>-tab">
