@@ -11,3 +11,27 @@
     src: url("/assets/fonts/stonehen.ttf");
     
     }
+
+    @font-face {
+        font-family: royal1;
+        src: url("/assets/fonts/Rise of Kingdom.ttf");
+        
+        }
+
+        @font-face {
+            font-family: royal2;
+            src: url("/assets/fonts/TRAJANUS.ttf");
+            
+            }
+
+            @font-face {
+                font-family: royal3;
+                src: url("/assets/fonts/royal-serif.ttf");
+                
+                }
+
+                @font-face {
+                    font-family: royal4;
+                    src: url("/assets/fonts/kong.otf");
+                    
+                    }

@@ -396,7 +396,7 @@ stream.once('open', (fd) => {
     });
 });
 var pbprom3=new Promise(()=>{
-setTimeout(()=>{console.log("Completing page build...");},2000);
+setTimeout(()=>{console.log("Completing page build...");},3000);
 });
 Promise.all([pbprom0,pbprom1,pbprom2,pbprom3]).then(console.log('Build successfull..')).catch();
 }

@@ -3,7 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%= pageComponents.pageTitle %></title>
+	<title><%= pageComponents.pageTitle %></title>
+	<meta name="description" 
+content="Pope Paul,Pope Paul VI,
+Pope Paul VI Social Club, Kampala, Rubaga,
+Pope Paul Memorial Hotel, Cardinal Nsubuga, Archbishop, Archbishop Cyprian, Kizito Lwanga,
+ Membership, Fellowship, <%= pageComponents.pageTitle %>
+"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/bootstrap-4.0.0-dist/css/bootstrap.min.css">
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  -->
@@ -76,7 +82,7 @@ background-attachment: fixed;
 
 <script>
 
-"<%setTimeout(()=>{console.log('starting to load..');},1000);%>"
+
 "<%var cprom0=new Promise(()=>{%>"
 
   $('#summernote').summernote({
@@ -194,7 +200,7 @@ $("#widgetmiddle<%-i%><%-p%>").summernote('destroy');
       "<%}}%>"
     
       "<% });Promise.all([cprom0]).then(console.log('loaded again..')).catch();%>"
- 
+      "<%setTimeout(()=>{console.log('starting to load..');},1000);%>"
   </script> 
 
 
