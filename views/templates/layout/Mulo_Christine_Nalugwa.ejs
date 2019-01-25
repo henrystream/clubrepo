@@ -76,13 +76,13 @@ background-attachment: fixed;
 
 <script>
 
-"<%setTimeout(()=>{console.log('loaded..');},3000);%>"
+"<%setTimeout(()=>{console.log('starting to load..');},1000);%>"
 "<%var cprom0=new Promise(()=>{%>"
 
   $('#summernote').summernote({
     placeholder: 'logo data edit',tabsize: 2,height:300,focus: true
     });
-    "<% });Promise.all([cprom0]).then(console.log('loaded again..')).catch();%>"
+
 
     $('#summernote1').summernote({
       placeholder: 'Hero data Edit',
@@ -192,8 +192,9 @@ $("#widgetmiddle<%-i%><%-p%>").summernote('destroy');
 
   
       "<%}}%>"
-
-     
+    
+      "<% });Promise.all([cprom0]).then(console.log('loaded again..')).catch();%>"
+ 
   </script> 
 
 

@@ -79,11 +79,14 @@ else{
 
 stats.text+=`\n"otherinfo":""\n}`;
 
-fs.readFile('./views/templates/'+templateName+'/'+finalPageName+'.txt', 'utf8', function(err,data) {
+fs.readFile(__dirname+'/views/templates/'+templateName+'/'+finalPageName+'.txt', 'utf8', function(err,data) {
     if(err) throw err;
     config = JSON.parse(data);
     console.log(config);
-    buildPage(config,templateName,finalPageName);
+    setTimeout(()=>{
+        buildPage(config,templateName,finalPageName);
+    },2000);
+  
 });
 
 return config;
@@ -124,28 +127,28 @@ else{
 
 
 //Loading headers from the extras folder
-fs.readFile('./views/extras/1.ejs', 'utf8', function(err,data) {
+fs.readFile(__dirname+'/views/extras/1.ejs', 'utf8', function(err,data) {
     if(err) throw err;
-    var stream = fs.createWriteStream(`./views/templates/${templateName}/${finalPageName}_dir/1.ejs`);
-    stream.once('open', (fd) => {
-    stream.write(data);
-    stream.end();
+    //var stream = fs.createWriteStream(`./views/templates/${templateName}/${finalPageName}_dir/1.ejs`);
+    //stream.once('open', (fd) => {
+    //stream.write(data);
+    //stream.end();
+//});
 });
-});
-fs.readFile('./views/extras/2.ejs', 'utf8', function(err,data) {
+fs.readFile(__dirname+'/views/extras/2.ejs', 'utf8', function(err,data) {
     if(err) throw err;
-    var stream = fs.createWriteStream(`./views/templates/${templateName}/${finalPageName}_dir/2.ejs`);
-    stream.once('open', (fd) => {
-    stream.write(data);
-    stream.end();
-});
+   // var stream = fs.createWriteStream(`./views/templates/${templateName}/${finalPageName}_dir/2.ejs`);
+   // stream.once('open', (fd) => {
+    //stream.write(data);
+    //stream.end();
+//});
 });
 
 
 
 r.forEach((row)=>{  
 
-    var stream = fs.createWriteStream(`./views/templates/${templateName}/${finalPageName}_dir/1.${c}.ejs`);
+    var stream = fs.createWriteStream(`${__dirname}/views/templates/${templateName}/${finalPageName}_dir/1.${c}.ejs`);
 
     stream.once('open', (fd) => {
     stream.write(row);
@@ -166,7 +169,7 @@ function breakLayoutColumns(pattern,q,c,templateName,finalPageName){
 
 r.forEach((row)=>{  
 
-    var stream = fs.createWriteStream(`./views/templates/${templateName}/${finalPageName}_dir/1.${q}.${c}.ejs`);
+    var stream = fs.createWriteStream(`${__dirname}/views/templates/${templateName}/${finalPageName}_dir/1.${q}.${c}.ejs`);
 
     stream.once('open', (fd) => {
     stream.write(row);
@@ -188,7 +191,7 @@ function breakLayoutIncludes(pattern,q,t,i,templateName,finalPageName){
 
    r.forEach((row)=>{  
 
-    var stream = fs.createWriteStream(`./views/templates/${templateName}/${finalPageName}_dir/1.${q}.${t}.${i}.ejs`);
+    var stream = fs.createWriteStream(`${__dirname}/views/templates/${templateName}/${finalPageName}_dir/1.${q}.${t}.${i}.ejs`);
    
 
     stream.once('open', (fd) => {
@@ -197,18 +200,18 @@ function breakLayoutIncludes(pattern,q,t,i,templateName,finalPageName){
     stream.end();
 });
 
-if (fs.existsSync('./views/templates/'+templateName+'/components/'+finalPageName+'/')) {
+if (fs.existsSync(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/')) {
 
-    if (fs.existsSync('./views/templates/'+templateName+'/components/'+finalPageName+'/data.json'))
+    if (fs.existsSync(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/data.json'))
     {
         var tdt ='data'//new Date().toLocaleDateString().replace('/','.').replace('/','.');
   
-        if (fs.existsSync('./views/templates/'+templateName+'/components/'+finalPageName+'/'+tdt+'.json'))
+        if (fs.existsSync(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/'+tdt+'.json'))
         {
         }
         else{   
         fs.readFile(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/data.json',(err,data)=>{
-                var stream1 = fs.createWriteStream('./views/templates/'+templateName+'/components/'+finalPageName+'/'+tdt+'.json');
+                var stream1 = fs.createWriteStream(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/'+tdt+'.json');
                if(data!=undefined){
                 stream1.once('open', (fd) => {
                        stream1.write(data);
@@ -238,7 +241,7 @@ if (fs.existsSync('./views/templates/'+templateName+'/components/'+finalPageName
         var prms1=new Promise(()=>{
             
             fs.readFile(__dirname+'/views/extras/data.json','utf8',(err,data)=>{
-                var stream1 = fs.createWriteStream('./views/templates/'+templateName+'/components/'+finalPageName+'/data.json');
+                var stream1 = fs.createWriteStream(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/data.json');
                if(data!=undefined){
                 stream1.once('open', (fd) => {
                        stream1.write(data);
@@ -253,7 +256,7 @@ if (fs.existsSync('./views/templates/'+templateName+'/components/'+finalPageName
             dd.push('/root_path',__dirname);
             dd.reload();
             fs.readFile(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/data.json',(err,data)=>{
-                var stream1 = fs.createWriteStream('./views/templates/'+templateName+'/components/'+finalPageName+'/'+tdt+'.json');
+                var stream1 = fs.createWriteStream(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/'+tdt+'.json');
                if(data!=undefined){
                 stream1.once('open', (fd) => {
                        stream1.write(data);
@@ -270,15 +273,15 @@ if (fs.existsSync('./views/templates/'+templateName+'/components/'+finalPageName
  
 }
 else{
-    fs.mkdirSync('./views/templates/'+templateName+'/components/'+finalPageName+'/');
+    fs.mkdirSync(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/');
 
 }
 
-if (fs.existsSync('./views/templates/'+templateName+'/components/'+finalPageName+'/1.'+q+'.'+t+'.'+i+'.ejs')) {
+if (fs.existsSync(__dirname+'/views/templates/'+templateName+'/components/'+finalPageName+'/1.'+q+'.'+t+'.'+i+'.ejs')) {
     // Do something
 }
 else{
-    var stream1 = fs.createWriteStream(`./views/templates/${templateName}/components/${finalPageName}/1.${q}.${t}.${i}.ejs`);
+    var stream1 = fs.createWriteStream(`${__dirname}/views/templates/${templateName}/components/${finalPageName}/1.${q}.${t}.${i}.ejs`);
     q-=1;
     var layoutcomponent="<%- include(pageComponents.root_path+pageComponents.layoutcomponents["+q+"].modal) %>"
     stream1.once('open', (fd) => {
@@ -368,14 +371,14 @@ stream.once('open', (fd) => {
                                // f++;
                 }
               
-                fs.readFile(__dirname+path+'2.ejs','utf8',(err,data)=>{
+                fs.readFile(__dirname+'/views/extras/2.ejs','utf8',(err,data)=>{
                     fs.appendFile(__dirname+config.pagename,"\n</div><!--closing column -->\n",(err)=>{
                         console.log(err);
                     })
                 });
               
             }
-            fs.readFile(__dirname+path+'2.ejs','utf8',(err,data)=>{
+            fs.readFile(__dirname+'/views/extras/2.ejs','utf8',(err,data)=>{
                 fs.appendFile(__dirname+config.pagename,"\n</div><!--closing row -->\n",(err)=>{
                     console.log(err);
                 })
@@ -386,13 +389,16 @@ stream.once('open', (fd) => {
        }
        });
        var pbprom2=new Promise(()=>{
-    fs.readFile(__dirname+path+'2.ejs','utf8',(err,data)=>{
+    fs.readFile(__dirname+'/views/extras/2.ejs','utf8',(err,data)=>{
         fs.appendFile(__dirname+config.pagename,data,(err)=>{
             console.log(err);
         })
     });
 });
-Promise.all([pbprom0,pbprom1,pbprom2]).then(console.log('Build successfull..')).catch();
+var pbprom3=new Promise(()=>{
+setTimeout(()=>{console.log("Completing page build...");},2000);
+});
+Promise.all([pbprom0,pbprom1,pbprom2,pbprom3]).then(console.log('Build successfull..')).catch();
 }
 
 
